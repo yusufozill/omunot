@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html>
+<!-- © 2019 Yusuf Özil tarafından derlenmiş ve tasarlanmıştır  -->
+
+<!-- © 2019 compiled and designed by Yusuf Özil -->
+
+<head>
+    <meta name="author" content="yusuf Özil, yusufozill@omunot.com" />
+    <meta http-equiv="refresh" content="3600">
+    <!-- Add iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="OmuNot">
+    <link rel="Shortcut Icon" href="icons/apple-icon-150x150.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="icons/apple-icon-150x150.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="icons/apple-icon-167x167.png">
+    <link href="icons/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+
+    <!--script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></!--script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script-->
+
+
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="tr" />
+    <meta name="description"
+        content="Ondokuz Mayıs Üniversitesi Tıp Öğrecileri İçin Not Hesaplama Sitesi. Blok Notlarınızı Girin Yıl Sonu Ortalamanızı, Geçme-Kalma Durumunuzu Öğrenin. Sınıf Geçmek İçin Finalden Kaç Almanız Gerektiğini Hesaplayın." />
+    <meta name="keywords"
+        content="omu,omü,omü tıp, omü tıp hesap, omü tıp not hesaplama, omü tıp ortalama hesaplama,omunot, Ondokuz Mayıs Üniversitesi Tıp Fakültesi, Ondokuz Mayıs, Tıp Not, Not Hesaplama " />
+    <meta name="author" content="yusuf Özil, yusufozill@omunot.com" />
+    <meta name="revisit-after" content="2 days">
+
+		<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+		<meta name=Generator content="Microsoft Word 15 (filtered)">
+		<style>
+		
+		 /* Font Definitions */
+		 @font-face
+			{font-family:"Cambria Math";
+			panose-1:2 4 5 3 5 4 6 3 2 4;}
+		@font-face
+			{font-family:Calibri;
+			panose-1:2 15 5 2 2 2 4 3 2 4;}
+		 /* Style Definitions */
+		 p.MsoNormal, li.MsoNormal, div.MsoNormal
+			{margin-top:0cm;
+			margin-right:0cm;
+			margin-bottom:10.0pt;
+			margin-left:0cm;
+			line-height:115%;
+			font-size:11.0pt;
+			font-family:"Calibri",sans-serif;}
+		p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+			{margin-top:0cm;
+			margin-right:0cm;
+			margin-bottom:10.0pt;
+			margin-left:36.0pt;
+			line-height:115%;
+			font-size:11.0pt;
+			font-family:"Calibri",sans-serif;}
+		p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+			{margin-top:0cm;
+			margin-right:0cm;
+			margin-bottom:0cm;
+			margin-left:36.0pt;
+			line-height:115%;
+			font-size:11.0pt;
+			font-family:"Calibri",sans-serif;}
+		p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+			{margin-top:0cm;
+			margin-right:0cm;
+			margin-bottom:0cm;
+			margin-left:36.0pt;
+			line-height:115%;
+			font-size:11.0pt;
+			font-family:"Calibri",sans-serif;}
+		p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+			{margin-top:0cm;
+			margin-right:0cm;
+			margin-bottom:10.0pt;
+			margin-left:36.0pt;
+			line-height:115%;
+			font-size:11.0pt;
+			font-family:"Calibri",sans-serif;}
+		.MsoChpDefault
+			{font-family:"Calibri",sans-serif;}
+		.MsoPapDefault
+			{margin-bottom:10.0pt;
+			line-height:115%;}
+		@page WordSection1
+			{size:595.3pt 841.9pt;
+			margin:70.85pt 70.85pt 70.85pt 70.85pt;}
+		div.WordSection1
+			{page:WordSection1;}
+		 /* List Definitions */
+		 ol
+			{margin-bottom:0cm;}
+		ul
+			{margin-bottom:0cm;}
+	
+		</style>
+		
+		
+
+
+    <title>akb</title>
+
+
+    <!-- Web App Manifest -->
+    <!--link rel="manifest" href="manifest.json"-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="Nothesaplama.css">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--link rel="stylesheet" type="text/css" href="css/normalize.css"-->
+
+
+    <link rel="stylesheet" type="text/css" href="/omunot/cms.css">
+    <script src="/omunot/js.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <meta name="viewport" content="700px, maximum-scale=1.0, minimum-scale=0.1, initial-scale=0.5" />
+
+
+
+
+
+    <div id="engtr" onclick="langui()">
+        <div id="iccam">tr</div>
+    </div>
+
+    <div id="tipnot" class="container2">
+
+
+        <div class="sekmefull">
+
+            <ul class="sekmeler">
+                <li id="sekme1" class="sekme-link" sekme="sekme-1">1. Sınıf</li>
+                <li id="sekme2" class="sekme-link" sekme="sekme-2">2. Sınıf</li>
+                <li id="sekme3" class="sekme-link" sekme="sekme-3">3. Sınıf</li>
+                <!--<li class="sekme-link" sekme="sekme-4">4. Sekme</li>
+                <li class="sekme-link" sekme="sekme-5">5. Sekme</li-->
+
+            </ul>
+
+
+
+            <div id="pageone" class="sekme-icerik tiklanan">
+
+                <div id="ihtml">
+
+                    <div id="ibody" style="background: #b7dcba">
+
+
+                        <div id="biopage" class="icontainer" style="font-family: 'Montserrat Alternates', sans-serif;">
+                            <div>
+                            
+
+
+
+
+
+
+<html>
+
+
+	<body lang=TR style='word-wrap:break-word'>
+	
+	<div class=WordSection1>
+	
+	<p class=MsoNormal align=center style='text-align:center'><b><span
+	style='font-size:22.0pt;line-height:115%;text-transform:uppercase'>Quide for to
+	ga&#305;n withdrawing sk&#305;ll from an ampoule</span></b></p>
+	
+	<p class=MsoNormal><b><span style='font-size:18.0pt;line-height:115%;
+	text-transform:uppercase'>a&#305;m; to ga&#305;n w&#305;thdraw&#305;ng sk&#305;ll
+	from an ampoule</span></b></p>
+	
+	<p class=MsoNormal><b><span style='font-size:18.0pt;line-height:115%'>&nbsp;</span></b></p>
+	
+	<p class=MsoNormal align=center style='text-align:center'><b><span
+	style='font-size:20.0pt;line-height:115%'>Steps</span></b></p>
+	
+	<p class=MsoListParagraphCxSpFirst style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>1-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Wash your
+	hands and wear general purpose gloves</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>2-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Prepare
+	the treatment tray (injector, gauze, ampoule)</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>3-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Check the
+	drug and its dosage (expiration data, e.t.c.)</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>4-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Open the
+	injector package and then put the needle on the syringe and put it on the
+	treatment tray</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>5-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Remove the
+	liquid from the neck of ampoule by flicking it or� swinging it fast in a
+	download spiralling movement and file around the neck of the ampoule</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>6-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Cover the
+	ampoule with gauze and break off the top of the ampoule oppositely to the filed
+	neck with the thumb and forefinger</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>7-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Drop the
+	gauze with the broken part of the ampoule into the household waste bin and put
+	the ampoule body on the treatment tray</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>8-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Take the
+	injector and remove its protective cover</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>9-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Take the
+	ampoule with the forefinger and middle finger of the other hand</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>10-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>�Place the
+	injector that held like a pen into the ampoule without any contamination</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>11-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Hold the
+	injector body with the thumb and forefinger of the hand that holding the
+	ampoule and aspirate the drug with free hand</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:20.0pt;line-height:115%'>12-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:20.0pt;line-height:115%'>Drop the
+	ampoule into the household waste bin</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-left:54.0pt;text-indent:-36.0pt'><b><span
+	style='font-size:24.0pt;line-height:115%'>13-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+	</span></span></b><b><span style='font-size:24.0pt;line-height:115%'>Close up
+	injector with the protective cover without any contamination</span></b></p>
+	
+	<p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:0cm;
+	margin-bottom:0cm;margin-left:54.0pt;text-indent:-36.0pt;line-height:normal;
+	text-autospace:none'><b><span style='font-size:24.0pt'>14-<span
+	style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></b><b><span
+	style='font-size:24.0pt'>Remove any air from the injector with any loss of drug</span></b></p>
+	
+	<p class=MsoListParagraphCxSpLast style='margin-top:0cm;margin-right:0cm;
+	margin-bottom:0cm;margin-left:54.0pt;text-indent:-36.0pt;line-height:normal;
+	text-autospace:none'><b><span style='font-size:24.0pt'>15-<span
+	style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp; </span></span></b><b><span
+	style='font-size:24.0pt'>Put the prepared injector on the treatment tray</span></b></p>
+	
+	</div>
+	
+	</body>
+	
+	</html>
+	  </div>
+                
+
+
+
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="sekme-5" class="sekme-icerik">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    </body>
+
+    <script>
+        function yusuf() {
+    window.open("https://www.instagram.com/yusufozill");
+}
+
+
+
+    </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

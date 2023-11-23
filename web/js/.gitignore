@@ -1,0 +1,1 @@
+git update-index --chmod=644 app.js

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html>
+<!-- © 2019 Yusuf Özil tarafından derlenmiş ve tasarlanmıştır  -->
+
+<!-- © 2019 compiled and designed by Yusuf Özil -->
+
+<head>
+    <meta name="author" content="yusuf Özil, yusufozill@omunot.com" />
+    <meta http-equiv="refresh" content="3600">
+    <!-- Add iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="OmuNot">
+    <link rel="Shortcut Icon" href="icons/apple-icon-150x150.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="icons/apple-icon-150x150.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="icons/apple-icon-167x167.png">
+    <link href="icons/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
+
+
+
+    <!--script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></!--script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script-->
+
+
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="tr" />
+    <meta name="description"
+        content="Ondokuz Mayıs Üniversitesi Tıp Öğrecileri İçin Not Hesaplama Sitesi. Blok Notlarınızı Girin Yıl Sonu Ortalamanızı, Geçme-Kalma Durumunuzu Öğrenin. Sınıf Geçmek İçin Finalden Kaç Almanız Gerektiğini Hesaplayın." />
+    <meta name="keywords"
+        content="omu,omü,omü tıp, omü tıp hesap, omü tıp not hesaplama, omü tıp ortalama hesaplama,omunot, Ondokuz Mayıs Üniversitesi Tıp Fakültesi, Ondokuz Mayıs, Tıp Not, Not Hesaplama " />
+    <meta name="author" content="yusuf Özil, yusufozill@omunot.com" />
+    <meta name="revisit-after" content="2 days">
+
+
+
+    <title>OmuNot</title>
+
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="Nothesaplama.css">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--link rel="stylesheet" type="text/css" href="css/normalize.css"-->
+
+
+    <link rel="stylesheet" type="text/css" href="/css/css.css">
+    <script src="/js/js.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <meta name="viewport" content="700px, maximum-scale=1.0, minimum-scale=0.1, initial-scale=0.5" />
+    <script> 
+        $(function () { //fonksiyonumuza başlayalım
+          $('ul.sekmeler li').removeClass('tiklanan');//ul.sekmeler içindeki li ye tıklanınca lilerden 'tiklanan' classı kalkıyor.
+      $('.sekme-icerik').removeClass('tiklanan');//ul.sekmeler içindeki li ye tıklanınca sekme-icerikteki 'tiklanan' classı kalkıyor.
+      
+          $('#pageone').addClass('tiklanan')
+      
+      });</script>
+
+
+<body style="zoom: 1;">
+
+
+
+    <div id="engtr" onclick="langui()">
+        <div id="iccam">tr</div>
+    </div>
+
+    <div id="tipnot" class="container2">
+
+
+        <div class="sekmefull">
+
+            <ul class="sekmeler">
+                <li id="sekme1" class="sekme-link" sekme="sekme-1">1. Sınıf</li>
+                <li id="sekme2" class="sekme-link tiklanan" sekme="sekme-2">2. Sınıf</li>
+                <li id="sekme3" class="sekme-link" sekme="sekme-3">3. Sınıf</li>
+                <!--<li class="sekme-link" sekme="sekme-4">4. Sekme</li>
+                <li class="sekme-link" sekme="sekme-5">5. Sekme</li-->
+
+            </ul>
+
+
+    
+            <div id="pageone" class="sekme-icerik tiklanan">
+
+                <div id="ihtml">
+
+                    <div id="ibody" style="background: #b7dcba">
+
+
+                        <div id="biopage" class="icontainer" style="font-family: 'Montserrat Alternates', sans-serif;">
+                            <div>
+                                <div class="biobaslik">
+                                    OMUNOT
+                                </div>
+                                <!--img id="pp" class="bio" style="-webkit-user-select: none;" src="https://instagram.fist4-1.fna.fbcdn.net/vp/718c0d12caf90d6a5d047d5bd3b33221/5D7C5177/t51.2885-19/s320x320/39324291_971590499680043_6809131869930520576_n.jpg?_nc_ht=instagram.fist4-1.fna.fbcdn.net" />
+                                <div id="biom">
+                                    <div id="ad">Yusuf Özil</div><br />
+                                    <img class="social" style="-webkit-user-select: none;" src="https://www.facebook.com/images/fb_icon_325x325.png" /> /yusufozill <br />
+                                    <img class="social" style="-webkit-user-select: none;" src="https://www.instagram.com/static/images/ico/apple-touch-icon-180x180-precomposed.png/85a358fb3b7d.png" />/yusufozill
+
+                                </!--div -->
+
+                                <!--img style="-webkit-user-select: none;" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" />twitter-->
+
+                                <div id="buciklama">
+                                    <div class="rond" style="text-align:center; text-align: justify ;">
+                                        
+                                        Buraya girdiysen eğer bir şeyler merak ediyorsun demektir.<br><br>
+                                        Ben sen sormadan söyleyeyim. Bu siteyi Ondokuz Mayıs Üniversitesi tıp
+                                        öğrencilerinin yıl sonu ortalamalarını kolayca hesaplamaları için
+                                        oluşturdum.
+                                        Böylelikle daha rahat, daha estetik, daha esprili bir not hesaplama yöntemine
+                                        kavuştuk.
+                                        Bu sitenin hesaplama denklemini ve sayaçlarını üniversitenin yayınladığı
+                                        akademik takvim ve sınav yönetmeliğindeki ders ağırlıklarını baz alarak
+                                        hesapladım. Ve defalarca kontrol ettim.                                        Buna rağmen gözden kaçan bir hata yanlış hesaplamalara yol açabilir.
+                                        Ben kurduğum denklemi aşağıya yazayım bir de sen kontrol et istersen.
+                                        Zaman sayaçlarımızın saat hesaplanmaları da tüm sınıflar için sınav günü 09.30
+                                        baz alınarak hesaplanıyor. 
+
+                                        Güvenliğe gelince siteye girdiğin bilgiler kullandığın cihaza açık bir şekilde
+                                        kaydediliyor, şifrelenmiyor veya başka herhangi bir sunucuya
+                                        aktarılmıyor.
+
+                                        İçin rahat bir şekilde hesaplamalarını yapabilir, notlarını
+                                        öğrenebilirsin.
+                                        Beni arıyorsan <a href="mailto:yusufozill@omunot.com" style="color:black;">
+                                            yusufozill@omunot.com</a>'dan bana ulaşabilirsin. <br><br>
+                                        Güle güle kullan.<br><br>
+                                        <a onclick="yusuf()" style="color:black;text-decoration: none;"> •Yusuf
+                                            Özil•</a> <br><br><br><br>
+                                    </div>
+                                </div>
+                                <div class="rond">
+                                    1. Sınıf için: <br><span style="font-size:10px;">
+                                        Sonuç=((((((HayatinTemeliNotu*4) +
+                                        (YaşamNotu*6) + (BeslenmeNotu*6) +
+                                        (EnerjiNotu*6) + (MÇDNotu*6) + (ÜremeNotu*6) +
+                                        (HareketNotu*10) + (SeçmeliNotu*3)+100)/48)*50)
+                                        +(MDUNotu*10)+(PDÖNotu*10)
+                                        +(GelişimNotu*5)+
+                                        (FinalNotu*25))/100)
+                                    </span>
+                                    <hr>
+                                </div>
+                                <div class="rond">
+                                    2.Sınıf için: <br><span style="font-size:10px;">
+                                        Sonuç=((((((BeyinNotu* 10) +
+                                        (BüyümeNotu*7)+(EtikNotu*7)+(ZedelenmeNotu*5)+
+                                        (KanNotu*7)+
+                                        (SavunmaNotu*7)+
+                                        (SeçmeliNotu*4)+
+                                        (BiyolojikEtmenlerNotu*7)
+                                        )/54)*50)+
+                                        (MDUNotu*10)+
+                                        (PDÖNotu*10)+
+                                        (GelişimNotu*5)+
+                                        (FinalNotu*25)
+                                        )/100
+                                        );
+                                    </span>
+                                    <hr>
+                                </div>
+                                <div class="rond">
+                                    3.Sınıf İçin: <br><span style="font-size:10px;">
+                                        Sonuç= ((((((TıptaProf.Notu * 2)(GebelikNotu*5)+
+                                        (TravmaNotu*5)+(SolunumNotu*6)+(EnfeksiyonNotu*6)+(EndokrinNotu*6)+(SindirimNotu*5)+(SeçmeliNotu*4)+
+                                        (YaşlanmaNotu*5)+(NöropsikiyatriNotu*5)+(TümörNotu*5))/54)*50)+(MduNotu*10)+(PDÖNotu*10)+(GeliŞimNotu*5)+(FinalNotu*25))/100)
+                                    </span>
+                                    <hr>
+                                </div>
+                                <div class="rond">
+                                    Finalde almamız gereken not ((139/2)-sonuç)*4) şeklinde hesaplanır. Geçme notu 69,5
+                                    , Final barajı 59,5 kabul edilir.
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="sekme-5" class="sekme-icerik">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="komport">
+
+        <div class="yusuf" onclick="yusuf()">
+            Yusuf Özil
+
+
+        </div>
+        <hr id="hr" noshade="noshade">
+
+        <div id="hakim">
+            <div id="acik">
+                15.06.2020 | tarihinde güncellenmiştir. Bu sitede yeralan bilgiler defalarca gözden geçirilmesine rağmen
+                kesinlik ve doğruluk garantisi verememektedir.
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+
+
+</body>
+
+</html>
