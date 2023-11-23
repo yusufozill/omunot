@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+
+<html>
+<!-- © 2019 Yusuf Özil tarafından derlenmiş ve tasarlanmıştır  -->
+
+<!-- © 2019 compiled and designed by Yusuf Özil -->
+
+<head>
+    <meta name="author" content="yusuf Özil, yusufozill@omunot.com" />
+    <meta http-equiv="refresh" content="3600">
+    <script data-ad-client="ca-pub-6009163526412412" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <!-- Add iOS meta tags and icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="OmuNot">
+    <link rel="Shortcut Icon" href="icons/apple-icon-152x152.png" type="image/x-icon">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="icons/apple-icon-167x167.png">
+    <link href="icons/apple_splash_2048.png" sizes="2048x2732" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1668.png" sizes="1668x2224" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1536.png" sizes="1536x2048" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1125.png" sizes="1125x2436" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_1242.png" sizes="1242x2208" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_750.png" sizes="750x1334" rel="apple-touch-startup-image" />
+    <link href="icons/apple_splash_640.png" sizes="640x1136" rel="apple-touch-startup-image" />
+
+
+    <!--script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></!--script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script-->
+
+
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="tr" />
+    <meta name="description"
+        content="Ondokuz Mayıs Üniversitesi Tıp Öğrecileri İçin Not Hesaplama Sitesi. Blok Notlarınızı Girin Yıl Sonu Ortalamanızı, Geçme-Kalma Durumunuzu Öğrenin. Sınıf Geçmek İçin Finalden Kaç Almanız Gerektiğini Hesaplayın." />
+    <meta name="keywords"
+        content="omu,omü,omü tıp, omü tıp hesap, omü tıp not hesaplama, omü tıp ortalama hesaplama,omunot, Ondokuz Mayıs Üniversitesi Tıp Fakültesi, Ondokuz Mayıs, Tıp Not, Not Hesaplama " />
+    <meta name="author" content="yusuf Özil, yusufozill@omunot.com" />
+    <meta name="revisit-after" content="2 days">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWG5JRLWYW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QWG5JRLWYW');
+    </script>
+
+    <title>OmuNot</title>
+
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="Nothesaplama.css">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--link rel="stylesheet" type="text/css" href="css/normalize.css"-->
+
+
+    <link rel="stylesheet" type="text/css" href="css/css.css">
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <meta name="viewport" content="700px, maximum-scale=1.0, minimum-scale=0.1, initial-scale=0.5" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.0.1/firebase-app.js"></script>
+
+
+    <script>
+
+
+
+
+
+    </script>
+
+<body style=" zoom: 1;">
+
+
+
+    <div id="engtr" onclick="langui()">
+        <div id="iccam">tr</div>
+    </div>
+
+    <div id="tipnot" class="container2">
+
+
+
+
+        <div class="sekmefull">
+
+            <ul class="sekmeler">
+                <li id="sekme1" class="sekme-link" sekme="sekme-1">1. Sınıf</li>
+                <li id="sekme2" class="sekme-link tiklanan" sekme="sekme-2">2. Sınıf</li>
+                <li id="sekme3" class="sekme-link" sekme="sekme-3">3. Sınıf</li>
+                <!--<li class="sekme-link" sekme="sekme-4">4. Sekme</li>
+                <li class="sekme-link" sekme="sekme-5">5. Sekme</li-->
+            </ul>
+
+
+            <div id="sekme-1" class="sekme-icerik">
+                <div id="ihtml">
+
+                    <div id="ibody" style="background: #b7dcba">
+
+                        <div class="icontainer" style="font-family: Montserrat Alternates', sans-serif;">
+                            <div id="baslik">Not Hesaplama</div>
+                            <div class="giriş ekrani">
+
+                                <form id="form">
+                                    <div id="itable">
+
+                                        <!--cellpadig, cellspacingtablo büyüklüğü -->
+                                        <!--caption id="Not" height="40">Not Hesaplama</caption-->
+                                        <div class="bloksnotes">
+                                            <div class="bloks">Bloklar:</div>
+                                            <div class="notes">Notlar:</div>
+
+                                        </div>
+
+                                        <div class="satirtable">
+                                            <div class="bloknote">Uyum</div>
+                                            <div>:<input class="iinput" placeholder="100" readonly="readonly"
+                                                    id="UyumNotu" type="number" max="100" min="0" name="Uyum"></div>
+
+
+                                        </div>
+                                        <div class="satirtable">
+                                            <div class="bloknote">Hayatin Temeli:</div>
+                                            <div>:<input class="iinput" id="HayatinTemeliNotu" required="required"
+                                                    type="number" title="Notunuzu girin" max="100" min="0"
+                                                    name="Hayatintemeli" autocomplete="on" autofocusus=""
+                                                    onkeydown="if (event.keyCode == 13) { YasamFocus() }"> </div>
+
+                                        </div>
+                                        <div class="satirtable">
+                                            <div class="bloknote">Yaşam</div>
+                                            <div>:<input class="iinput" id="YasamNotu" required="required" type="number"
+                                                    title="Notunuzu girin" max="100" min="0" name="Yasam"
+                                                    autocomplete="on"
+                                                    onkeydown="if (event.keyCode == 13) { BeslenmeFocus() }"
+                                                    style="border: solid rgb(184, 144, 126);"></div>
+
+
+                                        </div>
+                                        <div class="satirtable">
+                                            <div class="bloknote">Beslenme</div>
+                                            <div>:<input class="iinput" id="BeslenmeNotu" required="required"
+                                                    type="number" title="Notunuzu girin" max="100" min="0"
+                                                    autocomplete="on" name="Beslenme"
+                                                    onkeydown="if (event.keyCode == 13) { EnerjiFocus() }"
+                                                    style="border: solid rgb(184, 144, 126);"></div>
+
+
+                                        </div>
+                                        <div class="satirtable">
+                                            <div class="bloknote">Enerji</div>
+                                            <div>:<input class="iinput" id="EnerjiNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="Enerji"
+                                                    onkeydown="if (event.keyCode == 13) { SecmeliFocus() }"
+                                                    style="border: solid rgb(184, 144, 126);"></div>
+
+
+                                        </div>
+                                        <div class="satirtable">
+                                            <div class="bloknote">Seçmeli Blok</div>
+                                            <div>:<input class="iinput" id="secmeliNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="SecmeliBlok"
+                                                    onkeydown="if (event.keyCode == 13) { MCDFocus() }"
+                                                    style="border: solid rgb(184, 144, 126);"></div>
+
+                                        </div>
+                                        <div class="satirtable">
+
+                                            <div class="bloknote">MÇD</div>
+                                            <div>:<input class="iinput" autocomplete="on" required="required"
+                                                    id="MCDNotu" title="Notunuzu girin" type="number" max="100" min="0"
+                                                    name="MCD" onkeydown="if (event.keyCode == 13) { UremeFocus() }"
+                                                    style="border: solid rgb(184, 144, 126);"></div>
+
+                                        </div>
+                                        <div class="satirtable">
+
+                                            <div class="bloknote">Üreme</div>
+                                            <div>:<input class="iinput" id="UremeNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="Ureme"
+                                                    onkeydown="if (event.keyCode == 13) { HareketFocus() }"
+                                                    style="border: solid rgb(184, 144, 126);"></div>
+
+                                        </div>
+                                        <div class="satirtable">
+
+                                            <div class="bloknote">Hareket ve kontrol</div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    title="Notunuzu girin" id="HareketNotu" type="number" max="100"
+                                                    min="0" name="HareketVeKontrol"
+                                                    onkeydown="if (event.keyCode == 13) { MCDFocus() }"
+                                                    style="border: solid rgb(184, 144, 126);"></div>
+
+                                        </div>
+                                        <div class="satirtable">
+
+                                            <div class="bloknote">MDU <label class="switch">
+                                                    <!-- <input type="checkbox" id="check" onclick="xoxe();" checked>
+                                                    <span class="slider round"></span>
+                                                </label> -->
+                                            </div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    title="Notunuzu girin" id="MDUNotu" placeholder="" type="number"
+                                                    max="100" min="0" name="MDU"
+                                                    onkeydown="if (event.keyCode == 13) { PDOFocus() }"></div>
+
+                                        </div>
+                                        <div class="satirtable">
+
+                                            <div class="bloknote">PDÖ</div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    id="PDONotu" type="number" max="100" min="0" title="Notunuzu girin"
+                                                    name="PDO" onkeydown="if (event.keyCode == 13) { GelisimFocus() }"
+                                                    style="border: solid rgb(184, 144, 126);"></div>
+
+                                        </div>
+                                        <div class="satirtable">
+
+                                            <div class="bloknote">Gelişim<label class="switch">
+                                                <input type="checkbox" id="gCheck" onclick="gelisimHesapla();" checked>
+                                                <span class="slider round"></span>
+                                            </label> </div>
+                                            <div>
+                                                :<input class="iinput" required="required" id="GelisimNotu"
+                                                    autocomplete="on" type="number" max="100" min="0" name="Gelisim"
+                                                    title="Notunuzu girin"
+                                                    onkeydown="if (event.keyCode == 13) { calculate();FinalFocus();basmak() ; }"
+                                                    style="border: solid rgb(184, 144, 126);">
+                                            </div>
+
+                                        </div>
+                                        <div class="satirtable">
+                                            <div class="bloknote">Final</div>
+                                            <div>:<input class="iinput" id="FinalNotu" title="Notunuzu girin"
+                                                    autocomplete="on" type="number" max="100" min="60" name="Final"
+                                                    onkeydown="if (event.keyCode == 13) { calculate(); basmak(); HayatFocus() }">
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+
+                                    </div>
+                                </form>
+
+
+                                <div id="output">
+                                    <div id="finalekrani">
+                                        <span id="final"></span>
+
+                                    </div>
+
+                                    <div id="sayiSonucEkrani">
+                                        <span id="sayiSonucGoster">61.01</span>
+                                    </div>
+                                    <div class="sonucEkrani" id="sonucEkrani">
+                                        <span class="sonucGoster" id="sonucGoster"></span>
+                                    </div>
+                                    <div>
+                                        <div class="HesaplaButonu" id="HesaplaButonu" autocomplete="on" type="button"
+                                            form="form" name="HESAPLA" onclick="calculate();basmak();">
+                                            <div class="Hesapla">HESAPLA</div>
+                                            <div class="sayacekran" id="sayacekran" style="position:relative;
+    margin:auto;
+    width: max-content;
+    top:20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    background-color: white;
+    color:black;
+    border-radius: 20%;
+    ">???</div>
+                                        </div>
+
+
+
+                                        <div class="svgclass" id="svgidone">
+                                            <svg class="kapak" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <image class="kapakimg" width="23px" height="4px" x="0px" y="0px"
+                                                    xlink:href="data:img/png;base64,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">
+                                                </image>
+                                            </svg>
+                                            <svg class="kova" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="1in" height="1in">
+                                                <image class="kovaimg" width="23px" height="23px" x="0px" y="0px"
+                                                    xlink:href="data:img/png;base64,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">
+                                                </image>
+                                            </svg>
+                                        </div>
+                                        <!--div class="rememberbox">
+                                            <label class="rememblabel"><span id="remembertext"> Sonuçları Hatırla </span>:<input type="checkbox" class="checkbox" id="rememberid" checked onclick="myFunction()" /> <span class="checkmark"></span></label>
+                                        <div-->
+                                    </div>
+                                    <div id="bilginotlari" class="bilginotlari kaporta" style="display: block;">
+                                        Sayacımızı görüp panik yapmayın, sayaç olmasa da zaman geçiyor</div>
+
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- 
+                        <div class="Cingoz" id="Cingozalani">
+                            <input placeholder="Buraya Yazarak Mesajınızı İletin" type="text"
+                                style="width: 700px;height: 130px; background-color: #b7dcba;" value="" name="Gariptext"
+                                id="Gariptext" onkeydown="if (event.keyCode == 13) { mesaj();} ">
+                            <div id="yazialani"></div>
+                            <div id="saatalani"></div>
+
+
+
+                        </div>
+                        <div style="position:relative; float:right; top:20px;
+                        ">
+                            <a id="somatostatin">önerileriniz için</a>
+                            <button onclick="mesaj();" type="button" name="gonder " id="gonderbutton">Gönder
+
+                            </button>
+                        </div> -->
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div id="sekme-2" class="sekme-icerik tiklanan">
+
+
+                <!--Yusuf Özil tarafından derlenmiş ve tasarlanmıştır-->
+                <div>
+
+                    <div id="xoxbody" style="background: #b7dcba">
+
+
+                        <div class="xoxcontainer" style="font-family: 'Montserrat Alternates', sans-serif;">
+                            <div id="xoxbaslik">Not Hesaplama</div>
+                            <div class="xoxgiriş ekrani">
+
+                                <form id="xoxform">
+                                    <div id="xoxtable">
+
+                                        <!--cellpadig, cellspacingtablo büyüklüğü -->
+                                        <!--caption id="xoxNot" height="40">Not Hesaplama</caption-->
+                                        <div class="bloksnotes">
+                                            <div class="bloks">Bloklar:</div>
+                                            <div class="notes">Notlar:</div>
+
+                                        </div>
+
+                                        <div>
+                                            <!--<div class="xoxbloknote" >Uyum</div>
+                                            <div >:<input class="iinput" placeholder="100" readonly id="xoxUyumNotu" type="number" max="100" min="0"   name="Uyum"></div>-->
+
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+                                            <div class="xoxbloknote">Büyüme, Gelişme Ve Davranış:</div>
+                                            <div>:<input class="iinput" id="buyumeGelismeDavranisNotu"
+                                                    required="required" type="number" title="Notunuzu girin" max="100"
+                                                    min="0" name="Yasam" autocomplete="on"
+                                                    onkeydown="if (event.keyCode == 13) { xoxHayatFocus() }"></div>
+
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+                                            <div class="xoxbloknote" width="110">Beyin Ve Duyular:</div>
+                                            <div>:<input class="iinput" id="beyinVeDuyularNotu" required="required"
+                                                    type="number" title="Notunuzu girin" max="100" min="0"
+                                                    name="Hayatintemeli" autocomplete="on"
+                                                    onkeydown="if (event.keyCode == 13) { xoxBeslenmeFocus() }"></div>
+
+                                        </div>
+
+                                        <div class="xoxsatirtable">
+                                            <div class="xoxbloknote">Etik Ve Tıbbi Araştırma Teknikleri:</div>
+                                            <div>:<input class="iinput" id="etikNotu" required="required" type="number"
+                                                    title="Notunuzu girin" max="100" min="0" autocomplete="on"
+                                                    name="Beslenme"
+                                                    onkeydown="if (event.keyCode == 13) { xoxEnerjiFocus() }"></div>
+
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+                                            <div class="xoxbloknote">Zedelenme:</div>
+                                            <div>:<input class="iinput" id="zedelenmeNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="Enerji"
+                                                    onkeydown="if (event.keyCode == 13) { xoxSecmeliFocus() }"></div>
+
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+                                            <div class="xoxbloknote">Biyolojik Etmenler:</div>
+                                            <div>:<input class="iinput" id="biyolojikEtmenlerNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="SecmeliBlok"
+                                                    onkeydown="if (event.keyCode == 13) { xoxMCDFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+
+                                            <div class="xoxbloknote">Kan:</div>
+                                            <div>:<input class="iinput" autocomplete="on" required="required"
+                                                    id="kanNotu" title="Notunuzu girin" type="number" max="100" min="0"
+                                                    name="MCD" onkeydown="if (event.keyCode == 13) { xoxUremeFocus() }">
+                                            </div>
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+
+                                            <div class="xoxbloknote">Savunma:</div>
+                                            <div>:<input class="iinput" id="savunmaNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="Ureme"
+                                                    onkeydown="if (event.keyCode == 13) { xoxHareketFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+
+                                            <div class="xoxbloknote">Seçmeli:</div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    title="Notunuzu girin" id="xoxsecmeliNotu" type="number" max="100"
+                                                    min="0" name="HareketVeKontrol"
+                                                    onkeydown="if (event.keyCode == 13) { xoxMDUFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+
+                                            <div class="xoxbloknote">MDU: <label class="switch">
+                                                    <!-- <input type="checkbox" id="xoxcheck" onclick="xoxe();" checked>
+                                                    <span class="slider round""></span>
+                                              </label> -->
+                                            </div>
+                                            <div>:<input class=" iinput" required="required" placeholder=""
+                                                        autocomplete="on" title="Notunuzu girin" id="xoxMDUNotu"
+                                                        type="number" max="100" min="0" name="MDU"
+                                                        onkeydown="if (event.keyCode == 13) { xoxPDOFocus() }">
+
+
+                                            </div>
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+
+                                            <div class="xoxbloknote">PDÖ:</div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    id="xoxPDONotu" type="number" max="100" min="0"
+                                                    title="Notunuzu girin" name="PDO"
+                                                    onkeydown="if (event.keyCode == 13) { xoxGelisimFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+
+                                            <div class="xoxbloknote">Gelişim: <label class="switch">
+                                                <input type="checkbox" id="xoxgCheck" onclick="gelisimHesapla();" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                            <div>
+                                                :<input class="iinput" required="required" id="xoxGelisimNotu"
+                                                    autocomplete="on" type="number" max="100" min="0" name="Gelisim"
+                                                    title="Notunuzu girin"
+                                                    onkeydown="if (event.keyCode == 13) { xoxcalculate();basmak();xoxFinalFocus() }">
+                                            </div>
+
+                                        </div>
+                                        <div class="xoxsatirtable">
+                                            <div class="xoxbloknote">Final:</div>
+                                            <div>:<input class="iinput" id="xoxFinalNotu" title="Notunuzu girin"
+                                                    autocomplete="on" type="number" max="100" min="60" name="Final"
+                                                    onkeydown="if (event.keyCode == 13) { xoxcalculate();  xoxYasamFocus();basmak() }">
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+
+                                    </div>
+                                </form>
+
+
+                                <div id="xoxoutput">
+                                    <div id="xoxfinalekrani">
+                                        <span id="xoxfinal"></span>
+
+                                    </div>
+
+                                    <div id="xoxsayiSonucEkrani">
+                                        <span id="xoxsayiSonucGoster"></span>
+                                    </div>
+                                    <div class="sonucEkrani" id="xoxsonucEkrani">
+                                        <span class="sonucGoster" id="xoxsonucGoster"></span>
+                                    </div>
+                                    <div>
+                                        <div class="HesaplaButonu" id="xoxHesaplaButonu" autocomplete="on" type="button"
+                                            form="form" name="HESAPLA" value="HESAPLA"
+                                            onclick="xoxcalculate();basmak();">
+                                            <div class="Hesapla">HESAPLA</div>
+                                            <div class="sayacekran" id="sayacekran1" style="position:relative;
+    margin:auto;
+    width: max-content;
+    top:20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    background-color: white;
+    color:black;
+    border-radius: 20%;
+    ">???</div>
+                                        </div>
+
+
+                                        <div class="svgclass" id="svgidtwo">
+
+                                            <svg class="kapak" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <image class="kapakimg" width="23px" height="4px" x="0px" y="0px"
+                                                    xlink:href="data:img/png;base64,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">
+                                                </image>
+                                            </svg>
+                                            <svg class="kova" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="1in" height="1in">
+                                                <image class="kovaimg" width="23px" height="23px" x="0px" y="0px"
+                                                    xlink:href="data:img/png;base64,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">
+                                                </image>
+                                            </svg>
+                                        </div>
+
+                                        <!--div-- class="rememberbox">
+                                            <label class="rememblabel"><span id="remembertext"> Sonuçları Hatırla </span>:<input type="checkbox" class="checkbox" id="rememberid" checked onclick="myFunction()" /> <span class="checkcont"><span class="checkmark"></span></span></label>
+                                        </!--div-->
+                                    </div>
+                                    <div id="bilginotlari" class="bilginotlari kaporta" style="display: block;">
+                                        Sayacımızı görüp panik yapmayın, sayaç olmasa da zaman geçiyor</div>
+
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="Cingoz" id="xoxCingozalani">
+                        <input placeholder="Buraya Yazarak Mesajınızı İletin" type="text"
+                            style="width: 700px;height: 130px; background-color: #b7dcba;" name="Gariptextxox" value=""
+                            id="Gariptextxox" onkeydown="if (event.keyCode == 13) { mesaj(); }">
+                        <div id="xoxyazialani"></div>
+                        <div id="xoxsaatalani"></div>
+                    </div>
+
+                    <div style="position:relative; float:right; top:20px;
+                    ">
+                        <a id="xoxsomatostatin">önerileriniz için</a>
+                        <button onclick="mesaj();" type="button" name="gonder " id="xoxgonderbutton">Gönder
+
+                        </button>
+                    </div> -->
+                </div>
+
+            </div>
+
+            <div id="sekme-3" class="sekme-icerik">
+
+
+                <div>
+
+                    <div id="xoxxbody" style="background: #b7dcba">
+
+
+                        <div class="xoxxcontainer" style="font-family: 'Montserrat Alternates', sans-serif;">
+                            <div id="xoxxbaslik">Not Hesaplama</div>
+                            <div class="xoxxgiriş ekrani">
+
+                                <form id="xoxxform">
+                                    <div id="xoxxtable">
+
+
+                                        <div class="bloksnotes">
+                                            <div class="bloks">Bloklar:</div>
+                                            <div class="notes">Notlar:</div>
+
+                                        </div>
+
+                                        <div>
+
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+                                            <div class="xoxxbloknote" width="110">Tıpta Profesyonellik</div>
+                                            <div>:<input class="iinput" id="xoxxProf" required="required" type="number"
+                                                    title="Notunuzu girin" max="100" min="0" name="prof"
+                                                    autocomplete="on" autofocus=""
+                                                    onkeydown="if (event.keyCode == 13) { xoxxHayatFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+                                            <div class="xoxxbloknote" width="110">Gebelik Ve Doğum:</div>
+                                            <div>:<input class="iinput" id="xoxxGebelikNotu" required="required"
+                                                    type="number" title="Notunuzu girin" max="100" min="0"
+                                                    name="Hayatintemeli" autocomplete="on" autofocus=""
+                                                    onkeydown="if (event.keyCode == 13) { xoxxYasamFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+                                            <div class="xoxxbloknote">Travma:</div>
+                                            <div>:<input class="iinput" id="xoxxTravmaNotu" required="required"
+                                                    type="number" title="Notunuzu girin" max="100" min="0" name="Yasam"
+                                                    autocomplete="on"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxBeslenmeFocus() }"></div>
+
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+                                            <div class="xoxxbloknote">Solunum Ve Dolaşım:</div>
+                                            <div>:<input class="iinput" id="xoxxSolDolNotu" required="required"
+                                                    type="number" title="Notunuzu girin" max="100" min="0"
+                                                    autocomplete="on" name="Beslenme"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxEnerjiFocus() }"></div>
+
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+                                            <div class="xoxxbloknote">Enfeksiyon:</div>
+                                            <div>:<input class="iinput" id="xoxxEnfeksiyonNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="Enerji"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxSecmeliFocus() }"></div>
+
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+                                            <div class="xoxxbloknote">Yaşlanma:</div>
+                                            <div>:<input class="iinput" id="xoxxYaslanmaNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="SecmeliBlok"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxMCDFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+
+                                            <div class="xoxxbloknote">Endokrin Sistem:</div>
+                                            <div>:<input class="iinput" autocomplete="on" required="required"
+                                                    id="xoxxEndokrinNotu" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="MCD"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxUremeFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+
+                                            <div class="xoxxbloknote">Sindirim Sistemi:</div>
+                                            <div>:<input class="iinput" id="xoxxSindirimNotu" required="required"
+                                                    autocomplete="on" title="Notunuzu girin" type="number" max="100"
+                                                    min="0" name="Ureme"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxtumorFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+
+                                            <div class="xoxxbloknote">Tümörler:</div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    title="Notunuzu girin" id="xoxxtumor" type="number" max="100"
+                                                    min="0" name="HareketVeKontrol"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxnoroFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+
+                                            <div class="xoxxbloknote">Nöropsikiyatriye Giriş:</div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    title="Notunuzu girin" id="xoxxnoro" type="number" max="100" min="0"
+                                                    name="HareketVeKontrol"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxHareketFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+
+                                            <div class="xoxxbloknote">Seçmeli:</div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    title="Notunuzu girin" id="xoxxSecmeliNotu" type="number" max="100"
+                                                    min="0" name="HareketVeKontrol"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxMDUFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+
+                                            <div class="xoxxbloknote">MDU: <label class="switch">
+                                                    <!-- <input type="checkbox" id="xoxxcheck" onclick="xoxe();" checked>
+                                                    <span class="slider round" "></span>
+                                              </label> -->
+                                            </div>
+                                            <div>:<input class=" iinput" required="required" placeholder=""
+                                                        autocomplete="on" title="Notunuzu girin" id="xoxxMDUNotu"
+                                                        type="number" max="100" min="0" name="MDU"
+                                                        onkeydown="if (event.keyCode == 13) { xoxxPDOFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+
+                                            <div class="xoxxbloknote">PDÖ:</div>
+                                            <div>:<input class="iinput" required="required" autocomplete="on"
+                                                    id="xoxxPDONotu" type="number" max="100" min="0"
+                                                    title="Notunuzu girin" name="PDO"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxGelisimFocus() }"></div>
+
+                                        </div>
+                                        <div class="xoxxsatirtable">
+
+                                            <div class="xoxxbloknote">Gelişim: <label class="switch">
+                                                <input type="checkbox" id="xoxxgCheck" onclick="gelisimHesapla();" checked>
+                                                <span class="slider round"></span>
+                                            </label></div>
+                                            <div>
+                                                :<input class="iinput" required="required" id="xoxxGelisimNotu"
+                                                    autocomplete="on" type="number" max="100" min="0" name="Gelisim"
+                                                    title="Notunuzu girin"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxcalculate();basmak();xoxxFinalFocus() }">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="xoxxsatirtable">
+                                            <div class="xoxxbloknote">Final:</div>
+                                            <div>:<input class="iinput" id="xoxxFinalNotu" title="Notunuzu girin"
+                                                    autocomplete="on" type="number" max="100" min="60" name="Final"
+                                                    onkeydown="if (event.keyCode == 13) { xoxxcalculate(); basmak(); xoxxProfFocus() }">
+                                            </div>
+
+                                        </div>
+
+
+
+
+
+
+                                    </div>
+                                </form>
+
+
+                                <div id="xoxxoutput">
+                                    <div id="xoxxfinalekrani">
+                                        <span id="xoxxfinal"></span>
+
+                                    </div>
+
+                                    <div id="xoxxsayiSonucEkrani">
+                                        <span id="xoxxsayiSonucGoster"></span>
+                                    </div>
+                                    <div class="sonucEkrani" id="xoxxsonucEkrani">
+                                        <span class="sonucGoster" id="xoxxsonucGoster"></span>
+                                    </div>
+                                    <div>
+                                        <div class="HesaplaButonu" id="xoxxHesaplaButonu" autocomplete="on"
+                                            type="button" form="form" name="HESAPLA" value="HESAPLA"
+                                            onclick="xoxxcalculate();basmak();">
+                                            <div class="Hesapla">HESAPLA</div>
+                                            <div class="sayacekran" id="sayacekran2" style="position:relative;
+    margin:auto;
+    width: max-content;
+    top:20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    background-color: white;
+    color:black;
+    border-radius: 20%;
+    ">???</div>
+                                        </div>
+
+
+
+
+                                        <div class="svgclass" id="svgidthree">
+                                            <svg class="kapak" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <image class="kapakimg" width="23px" height="4px" x="0px" y="0px"
+                                                    xlink:href="data:img/png;base64,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">
+                                                </image>
+                                            </svg>
+                                            <svg class="kova" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <image class="kovaimg" width="23px" height="23px" x="0px" y="0px"
+                                                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWwAAAGqCAQAAACFJ7abAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfjBRoFAAXd4c1jAAAXJ0lEQVR42u3da6xl9VnH8d/ae5/L3Ohwl5kywNAKgY6BpNC+gMRIWmKjjUqsaZuYWpvUmkisxjempqma+EKTWk1Vpn1hvGCMVoytMXYKKrTSkMCI0CDQDtdhYBgKZ2bOOXuffVm+mAtzztnnPM9e+/9f/7XWfD+8IcPa61z2wzO/9b/tTO/U7dohoDlO6KGO9ugT2pP6OwECelEvdDSvd+r61N8JENBQ8y0N1Uv9fQBB9TRoaaBu6u8DCKqnIR0bzUNho5G6RBE0ER0bjURho5FORxEKG81yumOTsdEsXQ15eETz9DRoaaiV1N8HEBRRBI3UZVQETdRjVARN1NOw44oiy3qaJI5KmNV12mJcc7qw7Y79uu7R0dQ/ESDpMv22rjSu6WrQcUWRk3pAz6T+iQBJ1+nXzGvcoyIts/kD5diilnmNe60IhY2qcBf2SCsaGRe2NJ/65wEkSfNmYY+0omFLuWPukY6NqrA7dk9DqSVpqGXjUgobVWEXdvdMYY/Mx0eiCKrCjiLLb3dsu7C3pv55AEnSVkfHHvkLmyiCarA7NlEENTRBxvZ0bAob1eDp2EQR1A6jImikCTI2HRv14enYRBHUzgQzj0QR1AcPj2ikwMN9FDaqgVERNNJEUcTaakDHRlXQsdFIE41je9ZjZ6l/IkBZ2CgitTSb+mcCNOfY8ThBx5Za2pb6ZwK0zVHYy/6MfeqvACC1eUcknmAcW8rYQ4MK2Ooo7J5/5pHNYagGz6kiEwz3EUVQDZ7RuXM28/aUGxcTRVAFdhTJ344iufoaGJdnzD2iAuwo0tdAuU5f5pl7pLCRnh1FuqcO7DtT2NZINlEEVWBHkeXVhW11bKIIqsC5MczfsYkiqAI7itCxUUNkbDSSfXLfMlEE9TNxxyaKoA4iZGyiCNJzHiL8dmEvGZcTRVAFdsde4uER9cMEDRqJCRo0Eg+PaKQIEzRsNEB6ESZo6NhIj7UiaKDMsUt94igyq07qnwvnuY5mQ0+pc34f0rOPN5s4Y0siZSMxz6kiE2ZsBvyQnqcCJ8zYFDbSK9CxPVGEcRGk5anAAlGE81aR1jbXkZRrCpuzoFB17nOgdHb4xHP4O4WNtOzC7mp46l/OFLa91YCOjdTsCjy9zeDtws4dc49kbKRlZ+zlM5HaX9iMiiA1zxKoNYVNFEH1RYoiFDbS8ux4LBBFKGykVaCwiSKoPqIIGilSFGFUBGnZFVigsBnHRmqecew1UYSzoFB9dhRZIoqgfuwK7BaJInRspMVwHxrJztgFhvuYoEFqhUZF7I7NqAjSKtCxPaMiPDwiLfscqAId+9Q5PEAqc46zyAoN9/m2vwMx+AYvCkzQSBQ20vEWdoEowrgIUvJUH1EENUMUQSMVjiKct4pqK1jYKxqYL7N3CQNxeOZR+uqvLWzf+X2es9OAGDwz390zCVurToi3x0WIIkjHs+Px7AmUbxe2Z8CPKIJUPFHknAqerLAZFUEqnlGRsR3bE0VY34d07OojiqB2pogii+YLGRVBKp5RkcXxUYTtvKiyCfbP0LFRF76OfRajIqiHKUZFiCKossJRhI6N6vJ17LMobNSDJ2MXnqBhrQjS8YxjE0VQM1NEEc9ZUBQ20phiVMQexyaKIJ2IUWRe7dQ/Hc5Tbc2b1xSOIi3NEUaQQKb5VelivOWioyLSFsftgdBarsnBwqv7WLiKNHxHoi6Oz9ieAxgobKTgK+zloqMi0jaiCBJouXZvLRYdFfGcUAyElznGRDZZK5KbL2WKBil4pmfyjaLIUCvmixkVQQqeUZEVDc99wbmWzZ7NwyNSsB8e10Tp1YVthxGiCFKwo4hR2BaiCFLwRJGpOjZRBCkQRdBIUxe2hSiCFFqTbTMgiqAeokcRChsplBBFKGyUb8ooYk/QbCVjIwFPx161OnV1mS4SRVBJnsJetTqVKII6iD4qQhRBCkzQoJGirxVhowFSaE12+AJRBPUwdcdmVARVFH2CZkYzlDZKlmlGHfOqqTp2pjnCCErWcjzb5dPNPLK+D+XzbDOYMopQ2CjfxAecTR5F5DocEAjJM9i36VoRT2HTsVG2AFGEwkb1+Dr2JoXd1ci8AVEEZfN07JF6q1+y9j9aPZtJdZTN7tj52qa8tvsumz17Cx/XgZLZHXu09hDs9YVtT6oTRVAuu7Bzq7A9q0UobJTLU9hLa1+y2pIjilDYKJcnihiFbUcRRkVQNs/DIxkbtRMkY1tRhOE+lK2UKELHRtlKiiKMY6NcAQqbKILqYYIGjRRgHJvhPlRPkIzNBA2qppQoQsdG2YI8PJKxUTVBMjZRBFVTUhRhHBvlKmWCpq0ZejZK1NKsWXFmYS86dj0y94gytR1beUerP89gfWF3OVkEFdN2Hb7QXf0Hk4+KSHN0bJSopTnzmgCjInRslMsXRaZ+eCRjo1wFDjgrVthEEZTJ17GNjN1Xn0l1VIpd2Ln66q/+o9a6S+xjzpiiQZnsKDJaP5q3vvdS2KgWu2OvCyLjCtseFyGKoEyewl5e+0fFCpuOjfJ4ooijsIkiqBaiCBqptCjCODbK5BsVWfeitewowswjytQ214oEe3gkiqA89uq+YBmbjo3yeKLI0voXrcWoCKqFURE0UqFRkc66i5J17HMn+7OWbtQu7ePvhgob6gm9ou/l59RLlGMdC42KrC/s5Bk7m9e9ul0Xc/hlDeR6I3tQH8t7099qQyVOqUeMItnHdUQ/q0so61rIdIl+Tkeyn4/4NQIVdtKHx+xP9BXtjHV3RHKh/jL7o2h3DzRBkzCKZNfrU44dyaierfrV7NpI9y5tgmZG7UhB4SHHJiBU07wejnLfTB3NGNcEiiItzcVI2dlWXUSyrq1MF2cx/rZtO86BChRFpLkxoynT+wLj47XW0ucj3LXQ4QvFCztGyr4uwj1Rphsi3NNO2MFW98UqbPp13cUIkh1XYbsytuf0vhhR5GiEe6JMRyLcs9CpIuOjyNC8UZyO/fcR7okyxXgHfVEkUMeOUtj5v+uY42ujmnK9kd8f4b6+KLJuSn99YQ/Vc0zRxIgi0m8q5poDxNTTb0S5r2dCvbc+ZYx7YOuaYSTWrse/1ncp7Vrq6bv5X0W5sx1FhusT9kaFnahj57k+qAe14BiXQXWM9Jb+Qx+IdHc7iowt7HEFmq5jK+9nd+pufVqXaps6DABW3Eh9Lel1/YX+NI/1dFRo/0zlClvKc30p+7Ju0d3aa64RQFp9HdIX9Vg+iPg1CkaR8YWd+GSRfKCHIy2pQd0UjCJFHx7jjIoAa3kWrToL2zPcx15ElMPO2O6Obc89csgZylJyFKGwUY6SowgZG+UIOEFDFEF1dFxT6usQRVBtATs2UQTVEXStCB0bVeGJIhQ2aqfUh0eiCMoScIKGE7JRHZ6Ovbz+D8c/PFodu60ZlpSiBC3Nmk10guE+e6H/LGEEJeho1rwmYMZmfR/K4dvK6x7HprBRDZ7CDvjwSBRBOYJGEXscm46NcgSNIhQ2qiJox17RwDyRiSiCMtgdO9dA/fV/3Bp76QqT6qgEu2MP1RvXhsdPs9jjInMcjYASeDaGjT07bHxh2ymbKIIy2IU9mKSwPR2bKIL4fFFk7AvH6ck62yd6x87a6vBRSxWXa5DbI2jTKLhHfaPCTnpkTtbSbn1Bu7WduFNxA53IXtLv6nAe6xhRu2MPwnbsaA+P2Xbdq9u0k25dE7nu0kPZx/OTUe5u75/ZoGMXf3iMkrGznTqon9SFlHVtZLpQH9Jj2c4odw88KuLp2BFiQtbW47qGAFI7He3V/2QxWp0nikzQsVONY39DuxhtqaW2dum+CPct3LE3ytgJokiW6U4iSG3N6KeyLPiHYxUe7ivescMHhk9R1rWW6ZeC39MzQTPRw2OKjB3rU0xQlg8Gv2PpHTvGBM1Fwe+Icl0S/I7BR0VSRJE3g98R5ToW/I6FJ2iKjmPHKOz/Cn5HlCv8O1j6OHaMKPJnfOB0reW6J/g9C68VKZ6xZ0KPYeQjfcf8HwpVNdB/Bl8xkqljzpcEXrbaivLxonfoNT6Vt5ZGelV3Br+r58SxCTca2J1zNvzcY76iW/WiYysxqmWoF/S+vD/9jdaYKbqVt3jHjjSpnr+iW/WAFkjbtZFrQffr1vyVCPf27VEPOqUuzcRZrJS/nn1IN+pz+hHt0CxzkRWWa0UndES/p6cifei0p2NPtB7bE0WircjOB3o8+4hmYjygIqBcffU0yOP97TpFFCnesYNn7FU1nGtFK2Hvjzgi9p4Z18l91X94BFaxB/smHO4bqm8Ou3EAA2Kzo8hQ/fHpYqNRwhWzZ8/QsRGZp7B74/9D8cKmYyM2zxKoDZ7ENirshPvUgdPsjj2YtGPbhU0UQWyFF60SRVBlno4dPIow3IfYkkQROjZii/Dw6IkidGzElahjU9iIK8lwH1EEsdkjb1FGRejYiMteBEUUQQ3x8IhG8jw8dsf/BzI2qivJBA1rRRBbhOE+lq0ivQhrRYgiSM9zXE7wKNJxHGYCFNdynIQQIYpksQ5gACSdStjWTuEIHZuUjbg89RUhY0uzjlMfgKJ8hR18goaOjbg8jbNAx/YcckZhI56poshGj3892WdnRixszqSsj2gnQUWJIn0NzOqKlLFzyrpWor1fdn3lGmzUgDcq7NFGJ+ycI0LHpqjrKcr7ZtfXUCsbnVi28RQLk+pIy66v/saBebPCtlJ28ChCt66z4O+ep7A3PJF3msKmYyMmu3H2NxoT0SaT4iV3bLp1/eUKOkbi2fFYqGOTsZGSp2MTRVA7yTI2a0UQE1EEjcSoCBrJTgQFOzaFjZSidWx71yMZG/Ekm3kM2rH5pNImCPouNuXhkdKuu8DvYLJx7OBRhNKus+DvXpNGRSjtuorwzkWKIv0049iUdh1FedemiiIbL4KyN4dFGhWhtCEpYcduqaN26p8eDeU5aaxQxvZt52UkG3F4zoaM9PBIYSMezwcLbLLRgMJGNXkKO9IEjef8YqAYXxSJMqVOx0Y8vigSKWPTsRFLtCgy1GCjw0jOomMjFjuKDDc71Gnjws5dc48UNuKwO/ZA/Y0PN9hsCHxl40Z/GlEEsdiF3d8sLLeKvlASHRvx2FFk08ZLYaOapto/QxRBVRFF0EhJowgdG7FE7Nh2FOEABsRid2yiCGrI7thRR0XmUv/8aKg5RkXQRPYHmhNFUEOJowiFjTiSjooQRRALoyJopKQzj3RsxDJlxu4UfaGkaB2bTxCrl0jnQCWMIp5DTSbEh07XT4T3rJV2uC9zfPmJUNR1Ffid62jG/Iug8HCfHUWkNh9iilOCvntz0x2+MG3HljpMqiOCqQu7U/SFZ18fqGPTresv4EdOe47LiTjzSMdGHBWIIoxkI7yohe15eKRjI4YpT+7bvLBHriNz5lP/DtBAdsceqL/ZSWWbT6/0zZ4ddLgPOM0ubONsyc0Le+CYeySKIDw7ivSmKWy7Y7M5DDHYHduIyVbH7mlzRBHEMHUU2fzlnmVQgTp2JiZp6i7gKj/PcTlRowjj2IjB07GjRpGgD498dGmdBX33onfskvfQUNp1Ffidi56x7SgSeFSErF0/EdrR1FFk85cP0mRs+vZ5b9b8MPPoD4+MYyM8+4CzKWceKWykEHlUhOE+pEEUQSNFn1KnsJGCnbGnXARV6gQNcFoFJmgobISX/OGxrRkz5gOTaTtOGIs83Ce16dkIzLOVN/KoCCuyEd6cIwVMubrPs0+d7bwIy1fY0Ts2UQRhzVcjilDYCIsogkbyFHZ/2lGRkTZHx0Zo82Zhj7Si4WYXbF7YuQbmWVAUNkLzrRTZdD+KNQxe8q5HQJ4o0rMarl3Y9twjGRth2VFkZfrCto/MoWMjLDuKTN2xhyxcRelKiCL2wlU6NkKzCztAFOkaV5CxEZo981jCwyMTNAjNE0WMnQI8PKJ6PFFkuPkF9gcilF7YnANVP4GPOGpiFKGs6yjwu1bKBE2pHZuyrqvAHzhdwqiIPfMYrLAp6zoL+O6VEkVKWytCWdddsHewSWtFKOsmCPQulhJFGO5D2Uro2PZaEQoboZWQsX1rRTipHeFk1YgiLc049hQDXh11zFZZQhSRWoQRBDRvVmUpHVtqa0vq3wUaxN4/U0rGpmMjrC0hCnv6RVCBOjYfg1d/gcYQPB27pCjCimyE48nYJcw8UtiQFHDpaikde2R9iI2kVqjCZjgc8hT2QH3rhDK76XuWQW0N9TNlFHctBX3f7IdHM4j4CnvZuKKj7eF+Koq7boK/X9vMwl62C9ueM7QLe1aXhP3JCCXntYvMz8hYND/0y9Gx+1o0rtii3al/F2iQK8zh4yCF3dUPjSu26srUvws0yG6zsN80T7txFPaSXjeu2KIrmXtEIG1daRb262Y8dhX2a8YVs7qcno1ALtcus00eNeOxo7BP6GXzmgt0S+rfBxriZl1gjh0c1knrNnZhL+h58+M6tut9qX8faIhbtMO4YqTntGDdxhNFXjYb/3a9l48xRQBt3WLOiizqsJasG9mFneu4njGumdXVek/q3wka4ErdYC7QeFYL9kJQu7Clt3TQvGa77kr9O0ED/IwjYR/UW/aNPIX9Qz1iXrNDHw07sY7zUFu/aCZs6RFzZkW+wj6uJ81M09Jl+kTq3wtq7sO6VjPGNct6UsdDfcF36VvKjX8GekrbWOSBwtp6UH2zzh7Quz0383Rs6S0dcHxb1+rTzECioFn9gt7r2GLwTb0Z7ovO6P1aNP9fyvV93WT+VQKs19ZePeaosEW9P2SFZdqtA44vO9TfaY/zbwHgjEyX6ctacVTYAe32xV279Z+SS/pp85aZ9qinp+wJT+AcF+lj+oxjPCTXH+hRxy7cCbS1V886/o/K9Zx+S7t4iITbxfqknnTV1jPa623F/o7d1aW6zXHlTl2trl7WidS/L9RApsv1YX1GN7mu3q9/DduvJamtfTqioev/rKf0ef0YhzLA0NG79Fk96qqpkV7TPncjntCfq+v6JnId01d1py4jkmADmS7W7fpDPe+sqK72x6umfTqkgfMb6enb+nXdrIsYJcEamXZqn35FB1yDyKem/w5p3yRfYrLWflR7dKMzYrS1R7fpPco0VFsjDTiaD2ppmy7VNbpDd+uTusE9Jn1c9+pvJvlCkzb33fqabp5o7fVAr+iADuh7WlBPfY1O/4PzRev0Px3N6QLdoDv0Ae2ZaJplRQd1lw5P8kUnTy0f1e/rmgKvG+iQDuoFLWhBx7VkfRY2GqKtrbpAF2in9ugmxyKn9XI9r8/p3sleNHmBtrRfd2lnol8Tzj8L+mf98qSNcPLhk1yP6CZdxefOoBQrekiftfc4rlVkXHBJz+p6XcVQHqLL9d/6Hf3f5AMPRQo71zEtaa92pf6p0XiP6kt6wD6Ccr1iMzlDvaS+rtLlqX9uNNoTukf32TvSxyk6RdnTizqp3boi9c+Oxvpf7dc/Ft1WUHzufVEvaYnSRiSPab/+SUeLvnyaRSWLOqxj2sHWAgQ20IPar2/o1eK3mG611Em9qMNq6yr2OiKYk/q6vqJvmaf8bmraZYBdvaxDGulSXZj694FG+IH+Qfv18LRHLEy/vnWg1/SkTki6mI+exlSO60H9rb6qp6ffThBi4XauBT2mJyVt1w51mLjBxHJ19bT+RX+sr+vNEOtAQ+1IGOqI7tcbaquvWc3yOAm3kY7r+3pY+/VFvRhqcVzo7jqj2/UR3aor9A7N07uxqVw9LehVHdR9+qb9uTKTiFF6mW7SB/Tjerfeoa2aY7kU1hmop65O6Ae6X/+mx8NvQonXU1u6WrfpJ3SLdqmjltpqKVNLWdSviirKJeUaKddIQ43U1xEd1Hf07RCPiePFL7EZXa59+lFdo726VJfoQnW0jS5+HhloUX29qWM6pkN6Tk/rCR21P6lxOv8PHxzzWq7L79kAAAAASUVORK5CYII=">
+                                                </image>
+                                            </svg>
+                                        </div>
+                                        <!--?xml version="1.0" encoding="utf-8" ?-->
+
+
+
+                                        <!--div-- class="rememberbox">
+                                                <label class="rememblabel"><span id="remembertext"> Sonuçları Hatırla </span><input type="checkbox" class="checkbox" id="rememberid"  checked onclick="myFunction()" /> <span class="checmark"> </span></label>
+                                            </!--div-->
+                                    </div>
+                                    <div class="bilginotlari kaporta" style="display: block;">Bu site Yusuf Özil
+                                        tarafından tasarlandı</div>
+
+
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <!-- 
+                        <div class="Cingoz" id="xoxxCingozalani">
+                            <input placeholder="Buraya Yazarak Mesajınızı İletin" type="text"
+                                style="width: 700px;height: 130px; background-color: #b7dcba;" name="Gariptextxoxx"
+                                value="" id="Gariptextxoxx" onkeydown="if (event.keyCode == 13) { mesaj(); }">
+                            <div id="xoxxyazialani"></div>
+                            <div id="xoxxsaatalani"></div>
+
+
+
+                        </div>
+                        <div style="position:relative; float:right; top:20px;
+                        ">
+                            <a id="xoxxsomatostatin">önerileriniz için</a>
+                            <button onclick="mesaj();" type="button" name="gonder " id="xoxxgonderbutton">Gönder
+
+                            </button>
+                        </div> -->
+
+
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+            <div id="pageone" class="sekme-icerik">
+
+                <div id="ihtml">
+
+                    <div id="ibody" style="background: #b7dcba">
+
+
+                        <div id="biopage" class="icontainer" style="font-family: 'Montserrat Alternates', sans-serif;">
+                            <div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="sekme-5" class="sekme-icerik">
+            </div>
+
+        </div>
+
+        <div class="kredirow"
+            style="margin-bottom: 10px; display: none; background-color: #007bff; padding: 20px; border-radius: 9px;">
+            <div class="kredicolumn">
+                <img src="https://assets.yapikredi.com.tr/WebSite/_assets/img/Yapikredi_logo.svg?v5" alt="YapiKredi"
+                    width="200">
+            </div>
+            <div class="kredicolumn" style="width: 62%;font-size: 25px; text-align: end;">
+                <p
+                    style='color:white;   font-weight: bold;  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+
+                    300TL
+
+                    Hediye
+                    <span style="color: #222222a5;">WORLD Puan </span>
+
+                </p>
+
+
+            </div>
+            <div onclick="{navigator.clipboard.writeText('ZWYQZ6KH'); alert('Panoya kopyalandı');}" class="kredicolumn"
+                style="width: 100%;font-size: 25px; text-align: start;">
+                <p
+                    style='color:#222;   font-weight: bold;  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                    ZWYQZ6KH
+                    <img src="ik" width="25px">
+
+                </p>
+
+
+
+            </div>
+            <div class="kredicolumn" style="width: 100%; ">
+                <p
+                    style='color:#222222ee; background-color: white; padding: 5px; border-radius:  9px; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                    <span style="font-weight: bold; color: #222;">30 Nisan 2023</span> tarihine kadar yapıkredi mobil
+                    uygulaması üzerinden
+                    <span class=""
+                        style='color: #222;;font-weight: bold;  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                        ZWYQZ6KH</span>
+                    kodunu kullanarak üye olmanız halinde 50₺ değerinde worldpuan, ilk ay otomatik ödeme talimatı verip
+                    ödendiği veya tek seferde 250₺ ve üzeri harcama yapmanız halinde ilave 250₺ toplamda <span
+                        style="font-weight: bold;color:  #222;">300₺</span> değerinde worldpuan kazanabilirsiniz.
+
+                </p>
+
+
+            </div>
+            <div class="kredicolumn" style="width: 100%;">
+                <a href="https://www.yapikredi.com.tr/kampanyalar/detay/242757"
+                    style='color:black;  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+
+                    Kampanya detaylarına
+                    buradan
+                    ulaşabilirsiniz
+                </a>
+
+
+            </div>
+        </div>
+
+
+
+
+        <div style="text-align:center;margin: auto;padding: top 40px;font-size: 15px;">
+            <div>
+            </div>
+
+            <a style="height: 135px;"
+                href='https://play.google.com/store/apps/details?id=com.omunot.omunotsays&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+
+
+                <img alt='Google Play' den alın' style="height: 150px;" src='https://i.hizliresim.com/ll9py03.png' />
+            </a>
+
+            <a style="height: 150px;" href='https://exam.omunot.com'>
+
+
+                <img alt='https://exam.omunot.com' den alın' style="height: 150px;"
+                    src='https://exam.omunot.com/icons/icon-512.png' />
+            </a>
+            <a style="height: 150px;" href='https://play.google.com/store/apps/details?id=com.omunot.epikriz'>
+
+
+                <img alt='https://play.google.com/store/apps/details?id=com.omunot.epikriz' style="height: 150px;"
+                    src='/appexam.png' />
+            </a>
+
+
+
+        </div>
+        <div class="row">
+
+            <div class="column inco">1.Sınıf</div>
+            <div class="column inco">3.Sınıf</div>
+            <div class="column inco">4.Sınıf</div>
+            <div class="column inco">5.Sınıf</div>
+
+
+        </div>
+        <div class="row" style="margin: auto; color:black; font-size:20px;">
+            <div class="column">
+                <ul>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/ureme'>
+                            •Üreme
+                        </a></li>
+                    <li>
+                        <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/Hareket'>
+
+                            •Hareket
+                        </a>
+                    </li>
+                    <li>
+                        <div class="inco" style="font-size: 16px;">2.Sınıf</div>
+                    </li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/savunma'>
+
+                            •Savunma
+                        </a></li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/biyolojik'>
+                            •Biyolojik Etmenler
+                        </a></li>
+                </ul>
+            </div>
+
+
+
+            <div class="column">
+                <ul>
+
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/gebelik'>
+                            •Gebelik
+                        </a></li>
+                    </li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/tumor'>
+                            •Tümorler
+                        </a>
+                    </li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/soldol'>
+                            •Sol-Dol
+                        </a>
+                    </li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/travma'>
+                            •Travma
+                        </a>
+                    </li>
+                    <li><a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/enfeksiyon'>
+                            •Enfeksiyon
+                        </a>
+                    </li>
+                    <li><a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/endokrin'>
+                            •Endokrin
+                        </a></li>
+                    <li><a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/sindirim'>
+                            •Sindirim
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/yaslanma'>
+                            •Yaşlanma
+                        </a>
+                    </li>
+                    <li>
+                        <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/noro'>
+                            •Nöro
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column">
+
+
+                <ul>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/pediatri'>
+                            •Pediatri
+                        </a> </li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/endo'>
+                            •Endokrin
+                        </a> </li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/gis'>
+                            •Gis
+                        </a> </li>
+                    <li>
+                        <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/soldol4'>
+                            •SolDol
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div class="column">
+                <ul>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/acil'>
+                            •Acil
+                        </a></li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/agri'>
+                            •Ağrı
+                        </a></li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/sinirsistemi'>
+                            •Sinir Sistemi
+                        </a></li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/kbb'>
+                            •KBB
+                        </a></li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black" href='https://www.omunot.com/goz'>
+                            •GÖZ
+                        </a></li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/dokuntu'>
+                            •Döküntü
+                        </a></li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/psikiyatri'>
+                            •Psikiyatri
+                        </a></li>
+                    <li> <a class="mannnnyak" style="height: 135px;  ;color:black"
+                            href='https://www.omunot.com/kadindogum'>
+                            •Kadın Doğum
+                        </a></li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- 
+        <div style="text-align:center;margin: auto; width:700px;  height: 60px; position: block; float: left;">
+            <div>
+
+
+
+                <a style="height: 40px; float:left;" href='https://turk.net/p/DSQ14WG43LJF'>
+
+
+                    <img alt='Google Play' den alın' style="height: 40px;"
+                        src='https://turk.net/v2/assets/img/logo.svg' />
+
+                </a>
+
+
+                </a>
+            </div>
+
+
+
+
+        </div> -->
+        <!-- <div  style="text-align:center;margin: auto; width:700px;  height: 60px; font-size: 15px;position: block; float: left;">
+            <div>
+
+
+
+                <a style="height: 60px; width: 233px; float:left; text-align: start; color: grey; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+                    href='/omunot/kampanya.html'>
+
+
+                    Türknet Kampanya Kodu: DSQ14WG43LJF <br /> 1 Ay Ücretsiz İnternet
+
+                </a> -->
+
+
+
+
+
+
+    </div>
+    </div>
+
+    </div>
+
+    </div>
+
+
+
+</body>
+
+
+
+</body>
+
+
+
+
+
+
+
+<div id="komport">
+
+    <div class="yusuf" onclick="insta();">
+        Yusuf Özil
+
+
+    </div>
+    <hr id="hr" noshade="noshade">
+
+    <div id="hakim">
+        <div id="acik">
+            15.12.2022 | tarihinde güncellenmiştir. Bu sitede yeralan bilgiler defalarca gözden geçirilmesine rağmen
+            doğruluk garantisi verememektedir.
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+</div>
+<div id="alert" class="alert"  >
+       Gelişim Sınavı Kaldırıldı Notunuz 100/95 ile çarpılacak     </div>
+<script src="js/js.js"></script>
+
+</html>
