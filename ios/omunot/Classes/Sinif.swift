@@ -7,7 +7,7 @@
 
 
 
-class Sinif :  Codable,Identifiable {
+class Sinif :  Codable {
     
     var bloklar:[String]
     var isim:String
