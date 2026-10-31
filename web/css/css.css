@@ -1,249 +1,33 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-sub,
-sup,
-tt,
-var,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video,
-input,
-textarea {
+/* ---- Temel ---------------------------------------------------------------- */
+
+html, body, div, span, a, img, ul, li, form, label, input {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
     font: inherit;
     vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-    display: block;
-}
+ul { list-style: none; }
+a { text-decoration: none; }
+:focus { outline: 0; }
+::selection { background-color: #555; color: #fff; }
+hr { color: black; opacity: 1; }
 
 body {
-    line-height: 1;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-blockquote,
-q {
-    quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-a {
-    text-decoration: none
-}
-
-:focus {
-    outline: 0
-}
-
-::-webkit-selection,
-::selection {
-    background-color: #555;
-    color: #fff
-}
-
-.clear {
-    clear: both
-}
-
-
-
-
-
-
-
-
-body {
-
     font-family: 'Montserrat Alternates', sans-serif;
     line-height: 1.6;
     background-color: #b7dcba;
 }
 
-.remember {
-    width: 16px;
-    height: 16px;
-    background-color: white;
-    margin: auto;
-}
-
-.svgclass {
-    position: relative;
-    display: inline-block;
-    border: solid 2px #c96b46;
-    border-radius: 100%;
-    float: right;
-    z-index: 0;
-    width: 45px;
-    height: 45px;
-    right: 100px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-}
-
-.kova {
-    z-index: 2;
-}
-
-.kovaimg {
-    z-index: 2;
-}
-
-.kapak {
-    z-index: 2;
-}
-
-.kapakimg,
-.kapak {
-    position: relative;
-    -o-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-    left: 0;
-    top: 0;
-    width: 23px;
-    height: 4px;
-    z-index: 2;
-    transition-duration: 0.2s;
-}
-
-.kovaimg,
-.kova {
-    position: relative;
-    width: 23px;
-    height: 23px;
-    z-index: 2;
-    transition-duration: 0.2s;
-}
-
-
-#remembertext {
-    position: relative;
-    top: -7px;
-}
-
-.rememberbox {
-    font-size: 10px;
-    text-decoration: underline;
-    display: block;
-    position: relative;
-    top: 50px;
-}
+/* ---- Sekmeler -------------------------------------------------------------- */
 
 .container2 {
     width: 700px;
     height: 1500px;
-
     margin: auto;
 }
 
-#mont {
-    width: 760px;
-    margin: auto;
-}
-
-/*.sekmefull {
-		box-shadow: 0 3px 5px rgba(0,0,0,.15);
-}*/
 ul.sekmeler {
     margin: 0;
     padding: 0;
@@ -262,15 +46,13 @@ ul.sekmeler li {
     user-select: none;
 }
 
-ul.sekmeler li:hover {
-    background: rgba(0, 0, 0, 0.5);
-}
+ul.sekmeler li:hover { background: rgba(0, 0, 0, 0.5); }
 
 ul.sekmeler li.tiklanan {
     background: #fff;
     color: #222;
     width: 210px;
-    animation: tiklaanim 0.20s ease;
+    animation: tiklaanim 0.2s ease;
 }
 
 .sekme-icerik {
@@ -282,62 +64,30 @@ ul.sekmeler li.tiklanan {
 
 .sekme-icerik.tiklanan {
     display: block;
-    animation: sekmeanim 0.20s ease;
+    animation: sekmeanim 0.2s ease;
 }
 
 @keyframes tiklaanim {
-    from {
-        width: 60px;
-    }
-
-    to {
-        width: 210px;
-    }
+    from { width: 60px; }
+    to { width: 210px; }
 }
 
 @keyframes sekmeanim {
-    from {
-        opacity: 0;
-        position: relative;
-        top: -50px;
-    }
-
-    to {
-        opacity: 1;
-        position: relative;
-        top: 0;
-    }
+    from { opacity: 0; position: relative; top: -50px; }
+    to { opacity: 1; position: relative; top: 0; }
 }
 
+/* ---- Sınıf paneli (üç sınıf aynı yapıyı kullanır) -------------------------------
+   Sınıfa göre değişenler HTML'de değişken olarak gelir:
+   --satir (satır yüksekliği), --sayi-ust (sonuç sayısının üst boşluğu) */
 
-
-
-
-
-#xoxhtml,
-#xoxbody {
+.govde {
     height: 100%;
-}
-
-#xoxbody {
     line-height: 1;
+    background: #b7dcba;
 }
 
-#xoxtable {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/* tables still need 'cellspacing="0"' in the markup */
-textarea {
-    overflow: auto;
-}
-
-#xoxbody {
-    background: rgb(255, 255, 255);
-}
-
-.xoxcontainer {
+.kutu {
     width: 680px;
     height: 580px;
     background: #eccbbe;
@@ -346,20 +96,7 @@ textarea {
     margin: 20px auto;
 }
 
-#xoxtable {
-    font-family: Comic Sans MS 20px;
-    color: rgb(0, 0, 0);
-    margin: 0 auto;
-    width: 245px;
-    height: 560px;
-    font: Cursive;
-    position: relative;
-    top: 10px;
-    float: left;
-    left: 5px;
-}
-
-#xoxbaslik {
+.baslik {
     float: right;
     position: relative;
     left: -30px;
@@ -367,123 +104,62 @@ textarea {
     font-size: 50px;
 }
 
-#xoxHesaplaButonu {
-    z-index: 1;
-    position: relative;
-    /** left: -165px; 	
-											top:300px;**/
-    border-radius: 100%;
-    font-weight: bold;
-    text-align: center;
-    width: 160px;
-    height: 160px;
+.tablo {
+    color: rgb(0, 0, 0);
     margin: 0 auto;
-    display: block;
-    border: none;
-    font-size: 34px;
-    background: #e46938;
-    color: rgb(255, 255, 255);
-    transition-property: all;
-    transition-duration: 0.2s;
-}
-
-#xoxHesaplaButonu:hover {
-    background: rgb(255, 255, 255);
-    color: #e46938;
-    border: 3px solid #e46938;
-    border-radius: 0;
-}
-
-
-#xoxgonderbutton,
-#gonderbutton,
-#xoxxgonderbutton {
-    background-color: #E46938;
-    border: none;
-    color: white;
-
-
-}
-
-#xoxgonderbutton:hover,
-#gonderbutton:hover,
-#xoxxgonderbutton:hover {
-
-    color: #e46938;
-    background-color: white;
-    border: none;
-}
-
-
-
-#xoxsayiSonucEkrani {
-    display: block;
-    width: 432px;
-    height: 40px;
-    border: 0 solid #457fa5;
-    margin: 1px auto;
-    text-align: center;
-    font: bold 50px tahoma;
-    color: #000;
-    line-height: 40px;
-    border-radius: 10px;
-    Left: 0;
-    top: 0;
+    width: 245px;
+    height: 560px;
     position: relative;
+    top: 10px;
+    float: left;
+    left: 5px;
 }
 
-#xoxsayiSonucGoster {
-    display: block;
+.bloksnotes { height: 30px; }
+.bloks { float: left; width: 160px; }
+.satir { height: var(--satir); }
+
+.ad {
+    position: relative;
     width: 160px;
-    height: 40px;
-    border: 0 solid #457fa5;
-    margin: 1px auto;
-    text-align: center;
-    font: bold 50px tahoma;
-    color: #000;
-    line-height: 40px;
-    border-radius: 10px;
-    Left: 0;
-    top: 0;
-    position: relative;
+    float: left;
+    top: 6px;
+    margin-top: 5px;
 }
 
-
-#xoxsonucEkrani {
-    position: relative;
-    /**top: 190px; left:124px;**/
-    display: block;
-    width: 432px;
-    height: 80px;
-    border: 0 solid #457fa5;
-    margin: 1px auto;
-    text-align: center;
-    font: bold 50px tahoma;
-    color: #000;
-    border-radius: 10px;
-}
-
-#xoxHesaplaButonu,
-#xoxsayiSonucEkrani,
-#xoxsonucEkrani,
-#xoxfinalekrani {
-    top: 50px;
-    left: 0;
-}
-
-
-.iinput {
+.girdi {
     width: 60px;
     height: 30px;
     border-radius: 10%;
     font-size: 30px;
     border: solid #b8907e;
     background: #eed7ce;
-    font-family: "indie flower"
+    font-family: "indie flower";
 }
 
+.girdi[data-durum="fazla"] { border-color: #b1a928; }
+.girdi[data-durum="bos"] { border-color: #dc2a2a; }
 
-#xoxfinalekrani {
+/* ---- Sonuç alanı ------------------------------------------------------------- */
+
+.cikti {
+    position: relative;
+    width: 432px;
+    height: 500px;
+    margin: auto;
+    text-align: center;
+    float: right;
+}
+
+.final,
+.sayi,
+.sonuc,
+.hesapla-dugme {
+    top: 50px;
+    left: 0;
+}
+
+.final {
     position: relative;
     display: block;
     width: 120px;
@@ -497,155 +173,24 @@ textarea {
     border-radius: 10px;
 }
 
-#xoxCingozalani {
-    margin: auto;
-    width: 700px;
-    height: 130px;
-    border: 3px solid #e46938;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 40px;
-    position: Relative;
-    top: 20px;
-    text-align: center;
-}
+.final.genis { width: 300px; }
 
-.yusuf {
-    margin: Auto;
-    width: 700px;
-    cursor: pointer;
-    font-family: 'Satisfy', cursive;
-    font-size: 20px;
-    text-align: center;
-    vertical-align: central;
-    left: 0;
-    display: block;
-    user-select: none;
-}
-
-#xoxoutput {
-    position: relative;
-    width: 432px;
-    height: 500px;
-    margin: 0 auto;
-    text-align: center;
-    float: right;
-}
-
-#xoxyazialani,
-#xoxsaatalani {
-    position: relative;
-    top: 10px;
-    text-align: center;
-}
-
-#xoxNot {
-    border: 1px solid #abb6a8;
-}
-
-
-
-
-
-#xoxxhtml,
-#xoxxbody {
-    height: 100%;
-}
-
-#xoxxbody {
-    line-height: 1;
-}
-
-#xoxxtable {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/* tables still need 'cellspacing="0"' in the markup */
-textarea {
-    overflow: auto;
-}
-
-#xoxxbody {
-    background: rgb(255, 255, 255);
-}
-
-.xoxxcontainer {
-    width: 680px;
-    height: 580px;
-    background: #eccbbe;
-    border: 3px solid #457fa5;
-    border-radius: 12px;
-    margin: 20px auto;
-}
-
-#xoxxtable {
-    font-family: Comic Sans MS 20px;
-    color: rgb(0, 0, 0);
-    margin: 0 auto;
-    width: 245px;
-    height: 560px;
-    font: Cursive;
-    position: relative;
-    top: 10px;
-    float: left;
-    left: 5px;
-}
-
-#xoxxbaslik {
-    float: right;
-    position: relative;
-    left: -30px;
-    user-select: none;
-    font-size: 50px;
-}
-
-#xoxxHesaplaButonu {
-    position: relative;
-    z-index: 1;
-    /** left: -165px; 	
-									top:300px;**/
-    border-radius: 100%;
-    font-weight: bold;
-    text-align: center;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto;
-    display: block;
-    border: none;
-    font-size: 34px;
-    background: #e46938;
-    color: rgb(255, 255, 255);
-    transition-property: all;
-    transition-duration: 0.2s;
-}
-
-#xoxxHesaplaButonu:hover {
-    background: rgb(255, 255, 255);
-    color: #e46938;
-    border: 3px solid #e46938;
-    border-radius: 0;
-}
-
-
-#xoxxsayiSonucEkrani {
+.sayi {
     display: block;
     width: 160px;
     height: 40px;
     border: 0 solid #457fa5;
-    margin: 1px auto;
+    margin: var(--sayi-ust) auto;
     text-align: center;
     font: bold 50px tahoma;
     color: #000;
     line-height: 40px;
     border-radius: 10px;
-    Left: 0;
-    top: 0;
     position: relative;
 }
 
-#xoxxsonucEkrani {
+.sonuc {
     position: relative;
-    /**top: 190px; left:124px;**/
     display: block;
     width: 432px;
     height: 80px;
@@ -657,148 +202,25 @@ textarea {
     border-radius: 10px;
 }
 
-.sonucGoster {
-    height: 80px;
-}
-
-#xoxxHesaplaButonu,
-#xoxxsayiSonucEkrani,
-#xoxxsonucEkrani,
-#xoxxfinalekrani {
-    top: 50px;
-    left: 0;
-}
-
-.sonucGoster {
+.sonuc-metin {
     position: relative;
     vertical-align: sub;
-
 }
 
-.rond {
-    text-align: center;
-}
+.sonuc[data-durum="fazla"] { color: #b1a928; }
+.sonuc[data-durum="kaldi"],
+.sonuc[data-durum="baraj"] { color: #dc2a2a; }
+.sonuc[data-durum="gecti"] { color: #56b856; }
+.sonuc[data-durum="gerek"] { color: black; }
 
+/* ---- HESAPLA düğmesi ve sayaç ------------------------------------------------ */
 
-#xoxxfinalekrani {
-    position: relative;
-    display: block;
-    width: 120px;
-    height: 80px;
-    border: 0 solid #457fa5;
-    margin: 1px auto;
-    text-align: center;
-    font: bold 40px tahoma;
-    color: #000;
-    line-height: 80px;
-    border-radius: 10px;
-}
-
-#xoxxCingozalani {
-    margin: auto;
-    width: 700px;
-    height: 130px;
-    border: 3px solid #e46938;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 40px;
-    position: Relative;
-    top: 20px;
-    text-align: center;
-}
-
-
-
-#xoxxoutput {
-    position: relative;
-    width: 432px;
-    height: 500px;
-    margin: 0 auto;
-    text-align: center;
-    float: right;
-}
-
-#xoxxyazialani,
-#xoxxsaatalani {
-    position: relative;
-    top: 10px;
-    text-align: center;
-}
-
-#xoxxNot {
-    border: 1px solid #abb6a8;
-}
-
-
-
-
-#ihtml,
-#ibody {
-    height: 100%;
-}
-
-#ibody {
-    line-height: 1;
-}
-
-#itable {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-/* tables still need 'cellspacing="0"' in the markup */
-
-
-#ibody {
-    background: rgb(255, 255, 255);
-}
-
-.icontainer {
-    width: 680px;
-    height: 580px;
-    background: #eccbbe;
-    border: 3px solid #457fa5;
-    border-radius: 12px;
-    margin: 20px auto;
-}
-
-.icontainer2 {
-    width: 680px;
-    height: 800px;
-    background: #eccbbe;
-    border: 3px solid #457fa5;
-    border-radius: 12px;
-    margin: 20px auto;
-}
-
-#itable {
-    font-family: Comic Sans MS 20px;
-    color: rgb(0, 0, 0);
-    margin: 0 auto;
-    width: 245px;
-    height: 560px;
-    font: Cursive;
-    position: relative;
-    top: 10px;
-    float: left;
-    left: 5px;
-}
-
-#baslik {
-    float: right;
-    position: relative;
-    left: -30px;
-    user-select: none;
-    font-size: 50px;
-}
-
-#HesaplaButonu {
-    position: relative;
+.hesapla-dugme {
     z-index: 1;
-    /** left: -165px; 	
-									top:300px;**/
+    position: relative;
     border-radius: 100%;
-    text-align: center;
     font-weight: bold;
+    text-align: center;
     width: 160px;
     height: 160px;
     margin: 0 auto;
@@ -809,162 +231,18 @@ textarea {
     color: rgb(255, 255, 255);
     transition-property: all;
     transition-duration: 0.2s;
+    cursor: pointer;
+    font-family: "indie flower";
 }
 
-#HesaplaButonu:hover {
+.hesapla-dugme:hover {
     background: rgb(255, 255, 255);
     color: #e46938;
     border: 3px solid #e46938;
     border-radius: 0;
 }
 
-
-
-#sayiSonucEkrani {
-    display: block;
-    width: 160px;
-    height: 40px;
-    border: 0 solid #457fa5;
-    margin: 0 auto;
-    text-align: center;
-    font: bold 50px tahoma;
-    color: #000;
-    line-height: 40px;
-    border-radius: 10px;
-    position: relative;
-}
-
-#sonucEkrani {
-    position: relative;
-    /**top: 190px; left:124px;**/
-    display: block;
-    width: 432px;
-    height: 80px;
-    border: 0 solid #457fa5;
-    margin: 1px auto;
-    text-align: center;
-    font: bold 50px tahoma;
-    color: #000;
-    border-radius: 10px;
-}
-
-#HesaplaButonu,
-#sayiSonucEkrani,
-#sonucEkrani,
-#finalekrani {
-    top: 50px;
-    left: 0;
-}
-
-
-
-
-#finalekrani {
-    position: relative;
-    display: block;
-    width: 120px;
-    height: 80px;
-    border: 0 solid #457fa5;
-    margin: 1px auto;
-    text-align: center;
-    font: bold 40px tahoma;
-    color: #000;
-    line-height: 80px;
-    border-radius: 10px;
-}
-
-.bloknote,
-.xoxxbloknote,
-.xoxbloknote {
-    position: relative;
-    width: 160px;
-    float: left;
-    top: 6px;
-}
-
-#Cingozalani {
-    margin: auto;
-    width: 700px;
-    height: 130px;
-    border: 3px solid #e46938;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 40px;
-    position: Relative;
-    top: 20px;
-    text-align: center;
-}
-
-.bilginotlari {
-    position: relative;
-    top: 100px;
-    width: 340px;
-    height: 80px;
-    margin: auto;
-    text-align: center;
-    user-select: none;
-    animation-name: bilgiefekt;
-    animation-duration: 0, 2s;
-    -webkit-animation-name: bilgiefekt;
-    /* Safari 4.0 - 8.0 */
-    -webkit-animation-duration: 0, 2s;
-    /* Safari 4.0 - 8.0 */
-    -moz-animation-name: bilgiefekt;
-    -moz-animation-duration: 0, 2s;
-}
-
-
-
-
-.mannnnyak:hover {
-    text-decoration: underline;
-}
-
-#komport {
-    position: relative;
-    cursor: pointer;
-    display: block;
-    margin: 1px;
-    margin-top: auto;
-
-    width: auto;
-    height: 100px;
-    background-color: transparent;
-    color: black;
-    text-align: center;
-}
-
-#output {
-    position: relative;
-    width: 432px;
-    height: 500px;
-    margin: auto;
-    text-align: center;
-    float: right;
-}
-
-#yazialani,
-#saatalani {
-    position: relative;
-    top: 0px;
-    text-align: center;
-}
-
-#saatalani {
-    height: 80px;
-
-    margin: auto;
-}
-
-#Not {
-    border: 1px solid #abb6a8;
-}
-
-.HesaplaButonu {
-    cursor: pointer;
-    font-family: "indie flower"
-}
-
-.Hesapla {
+.hesapla {
     position: relative;
     top: 60px;
     cursor: pointer;
@@ -972,41 +250,145 @@ textarea {
     width: 160px;
     height: 80px;
     text-align: center;
-    vertical-align: central;
     user-select: none;
 }
 
-.bio {
-    text-align: justify;
-}
-
-.biobaslik {
-    text-align: center;
-    font-size: 40px;
-    line-height: 2;
-}
-
-#pp {
+.sayacekran {
     position: relative;
     margin: auto;
-    width: 165px;
-    height: 165px;
+    width: max-content;
     top: 20px;
-    left: 150px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    background-color: white;
+    color: black;
+    border-radius: 20%;
 }
 
-#biom {
+/* ---- Temizle (çöp kutusu) simgesi --------------------------------------------- */
+
+.svgclass {
     position: relative;
-    top: 50px;
-    right: 40px;
-    width: 300px;
+    display: inline-block;
+    border: solid 2px #c96b46;
+    border-radius: 100%;
     float: right;
+    z-index: 0;
+    width: 45px;
+    height: 45px;
+    right: 100px;
+    transition-duration: 0.2s;
+    cursor: pointer;
 }
 
-.social {
-    width: 30px;
-    height: 30px;
+.kapak, .kova, .kapakimg, .kovaimg {
+    position: relative;
+    z-index: 2;
+    transition-duration: 0.2s;
 }
+
+.kapakimg, .kapak {
+    transform: rotate(0deg);
+    left: 0;
+    top: 0;
+    width: 23px;
+    height: 4px;
+}
+
+.kovaimg, .kova {
+    width: 23px;
+    height: 23px;
+}
+
+.svgclass:hover .kapak {
+    transform: rotate(29deg);
+    left: 4px;
+    top: -6px;
+}
+
+.hesapla-dugme:hover ~ .svgclass { right: 80px; }
+
+/* ---- Bilgi notu ----------------------------------------------------------------- */
+
+.bilgi {
+    position: relative;
+    top: 100px;
+    width: 340px;
+    height: 80px;
+    margin: auto;
+    text-align: center;
+    user-select: none;
+}
+
+.cikti:has(.hesapla-dugme:hover) .bilgi {
+    top: 94px;
+    transition-duration: 0.2s;
+}
+
+/* ---- Uygulama rozetleri ve ders bağlantıları ------------------------------------- */
+
+.uygulamalar {
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+}
+
+.uygulamalar img { height: 150px; }
+
+.inco { background-color: #ffffff52; }
+
+.column {
+    margin: 2px;
+    padding-left: 5px;
+    float: left;
+    width: 22%;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.baglantilar {
+    margin: auto;
+    color: black;
+    font-size: 20px;
+}
+
+.mannnnyak { color: black; }
+.mannnnyak:hover { text-decoration: underline; }
+.alt-baslik { font-size: 16px; }
+
+/* ---- Alt bilgi ve uyarı ---------------------------------------------------------- */
+
+.yusuf {
+    margin: auto;
+    width: 700px;
+    cursor: pointer;
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    user-select: none;
+    color: inherit;
+}
+
+#komport {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    margin: 0 1px 1px;
+    width: auto;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+    text-align: center;
+    font-size: 18px;
+    user-select: none;
+}
+
+#hakim { color: inherit; display: block; }
 
 #acik {
     font-size: 12px;
@@ -1014,181 +396,7 @@ textarea {
     opacity: 0.5;
     user-select: none;
     width: 700px;
-    text-align: center
-}
-
-#komport {
-
-    font-size: 18px;
-    background-color: rgba(255, 255, 255, 0.2);
-    user-select: none;
-}
-
-hr {
-    color: black;
-    opacity: 1;
-}
-
-#biopage {
-    height: 1010px;
-}
-
-#ad {
-    font-size: 30px;
-    position: relative;
-    right: 15px;
-}
-
-
-
-#engtr {
-
-    display: none;
-    position: relative;
-    left: 337px;
-    margin: auto;
-    margin-bottom: 2px;
-    margin-top: 2px;
-    font-size: 20px;
     text-align: center;
-    border-radius: 15%;
-    border: solid 1px black;
-    background-color: #dc2a2a;
-    cursor: pointer;
-    color: white;
-    width: 26px;
-    transition-duration: 0.2s;
-    height: 15px;
-}
-
-/*   #engtr:hover {
- 
-   
-        
-    
-        border: solid 1px #457fa5;
-        width: 40px;
-      
-    }*/
-#iccam {
-    position: relative;
-    top: -10px;
-
-}
-
-.bloks {
-    float: left;
-    width: 160px;
-}
-
-.bloksnotes {
-    height: 30px;
-}
-
-.xoxbloknote,
-.xoxxbloknote,
-.bloknote {
-    margin-top: 5px;
-}
-
-.xoxsatirtable {
-    height: 45px;
-}
-
-.satirtable {
-    height: 41px;
-}
-
-.xoxxsatirtable {
-    height: 36px;
-}
-
-.makaron {
-    font-size: 10px;
-
-}
-
-.rond {
-    font-size: cover;
-
-}
-
-
-
-
-
-.youtubebutton {
-    width: 350px;
-    height: 100px;
-    position: relative;
-    display: block;
-    float: left;
-    margin: auto;
-    cursor: pointer;
-
-}
-
-#sayacekran {
-    width: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 10px;
-    background-color: white;
-    color: black;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.inco {
-
-
-    background-color: #ffffff52;
-}
-
-
-
-.column {
-    margin: 2px;
-    padding-left: 5px;
-    float: left;
-    width: 22%;
-
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.kredicolumn {
-    margin: 2px;
-    padding-left: 5px;
-    float: left;
-    width: 30%;
-
-}
-
-/* Clear floats after the columns */
-.kredirow:after {
-    content: "";
-    display: table;
-    clear: both;
 }
 
 #alert {
@@ -1210,22 +418,8 @@ hr {
 }
 
 @keyframes bounce-in-out {
-  0% {
-    bottom: 0%;
-    opacity: 0;
-  }
-  5% {
-    bottom: 50%;
-    opacity: 1;
-  }
-  95% {
-    bottom: 50%;
-    opacity: 1;
-  }
-  100% {
-    bottom: 0%;;
-    opacity: 0;
-  }
-
-
+    0% { bottom: 0%; opacity: 0; }
+    5% { bottom: 50%; opacity: 1; }
+    95% { bottom: 50%; opacity: 1; }
+    100% { bottom: 0%; opacity: 0; }
 }
