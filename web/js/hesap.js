@@ -1,23 +1,14 @@
 // Yıl sonu hesabı. DOM'a dokunmaz; ekran ve depolama app.js'te.
-import {
-  BLOK_PAYI,
-  FINAL_BARAJI,
-  FINAL_CARPANI,
-  GECME_NOTU,
-  ORTAK_AGIRLIK,
-  YIL_SONU_MAX,
-  ortakIdler,
-} from './data.js';
+import { BLOK_PAYI, FINAL_BARAJI, FINAL_CARPANI, GECME_NOTU, ORTAK_AGIRLIK, YIL_SONU_MAX } from './data.js';
 
 /**
  * @param sinif      data.js'teki SINIFLAR kaydı
- * @param girdi      { inputId: kutudaki metin }; boş kutu 0 sayılır
+ * @param girdi      { blokId | 'mdu' | 'pdo' | 'gelisim' | 'final': kutudaki metin }; boş kutu 0 sayılır
  * @param gelisimVar Gelişim sınavı hesaba katılıyor mu (kapalıysa not 100/95 ile çarpılır)
  * @returns {{ sonuc: string, sayi: string|number, durum: 'fazla'|'gecti'|'kaldi'|'gerek'|'baraj' }}
  *   sonuc: yıl sonu ortalaması (2 hane), sayi: ekranda büyük gösterilecek değer
  */
 export function hesapla(sinif, girdi, gelisimVar) {
-  const id = ortakIdler(sinif);
   const not = (anahtar) => Number(girdi[anahtar] ?? '');
 
   let toplam = 0;
@@ -27,12 +18,12 @@ export function hesapla(sinif, girdi, gelisimVar) {
     agirlik += blok.agirlik;
   }
 
-  const final = not(id.final);
+  const final = not('final');
   let sonuc =
     ((toplam / agirlik) * BLOK_PAYI +
-      not(id.mdu) * ORTAK_AGIRLIK.mdu +
-      not(id.pdo) * ORTAK_AGIRLIK.pdo +
-      not(id.gelisim) * ORTAK_AGIRLIK.gelisim +
+      not('mdu') * ORTAK_AGIRLIK.mdu +
+      not('pdo') * ORTAK_AGIRLIK.pdo +
+      not('gelisim') * ORTAK_AGIRLIK.gelisim +
       final * ORTAK_AGIRLIK.final) /
     100;
   if (!gelisimVar) sonuc = (sonuc * 100) / 95;

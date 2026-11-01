@@ -11,71 +11,69 @@ export const BLOK_PAYI = 50; // bloklar toplamın %50'sini oluşturur
 export const ORTAK_AGIRLIK = { mdu: 10, pdo: 10, gelisim: 5, final: 25 }; // diğer %50
 
 // ---- Sınıflar ----------------------------------------------------------------
-// id'ler hem input id'si hem localStorage anahtarıdır; kullanıcıların kayıtlı notları
-// bozulmasın diye eski adlarıyla duruyor. `sabit`: kutusu yok, notu hep bu değerdir.
+// Blok id'si sınıf içinde tekildir; kutunun id'si ve localStorage anahtarı "sınıf-blok"
+// biçimindedir (bkz. kutuId). Eski anahtarlardaki notlar gecis.js ile taşınır.
+// `sabit`: kutusu yok, notu hep bu değerdir.
 
 export const SINIFLAR = [
   {
     id: 'bir',
-    onek: '',
     sekme: '1. Sınıf',
     satirYuksekligi: 41,
     sayiUstBosluk: 0,
     ortakSonek: '',
     bloklar: [
-      { id: 'UyumNotu', ad: 'Uyum', agirlik: 1, sabit: 100 },
-      { id: 'HayatinTemeliNotu', ad: 'Hayatin Temeli:', agirlik: 4 },
-      { id: 'YasamNotu', ad: 'Yaşam', agirlik: 6 },
-      { id: 'BeslenmeNotu', ad: 'Beslenme', agirlik: 6 },
-      { id: 'EnerjiNotu', ad: 'Enerji', agirlik: 6 },
-      { id: 'secmeliNotu', ad: 'Seçmeli Blok', agirlik: 3 },
-      { id: 'MCDNotu', ad: 'MÇD', agirlik: 6 },
-      { id: 'UremeNotu', ad: 'Üreme', agirlik: 6 },
-      { id: 'HareketNotu', ad: 'Hareket ve kontrol', agirlik: 10 },
+      { id: 'uyum', ad: 'Uyum', agirlik: 1, sabit: 100 },
+      { id: 'hayatinTemeli', ad: 'Hayatin Temeli:', agirlik: 4 },
+      { id: 'yasam', ad: 'Yaşam', agirlik: 6 },
+      { id: 'beslenme', ad: 'Beslenme', agirlik: 6 },
+      { id: 'enerji', ad: 'Enerji', agirlik: 6 },
+      { id: 'secmeli', ad: 'Seçmeli Blok', agirlik: 3 },
+      { id: 'mcd', ad: 'MÇD', agirlik: 6 },
+      { id: 'ureme', ad: 'Üreme', agirlik: 6 },
+      { id: 'hareket', ad: 'Hareket ve kontrol', agirlik: 10 },
     ],
   },
   {
     id: 'iki',
-    onek: 'xox',
     sekme: '2. Sınıf',
     satirYuksekligi: 45,
     sayiUstBosluk: 1,
     ortakSonek: ':',
     bloklar: [
-      { id: 'buyumeGelismeDavranisNotu', ad: 'Büyüme, Gelişme Ve Davranış:', agirlik: 7 },
-      { id: 'beyinVeDuyularNotu', ad: 'Beyin Ve Duyular:', agirlik: 10 },
-      { id: 'etikNotu', ad: 'Etik Ve Tıbbi Araştırma Teknikleri:', agirlik: 7 },
-      { id: 'zedelenmeNotu', ad: 'Zedelenme:', agirlik: 5 },
-      { id: 'biyolojikEtmenlerNotu', ad: 'Biyolojik Etmenler:', agirlik: 7 },
-      { id: 'kanNotu', ad: 'Kan:', agirlik: 7 },
-      { id: 'savunmaNotu', ad: 'Savunma:', agirlik: 7 },
-      { id: 'xoxsecmeliNotu', ad: 'Seçmeli:', agirlik: 4 },
+      { id: 'buyume', ad: 'Büyüme, Gelişme Ve Davranış:', agirlik: 7 },
+      { id: 'beyin', ad: 'Beyin Ve Duyular:', agirlik: 10 },
+      { id: 'etik', ad: 'Etik Ve Tıbbi Araştırma Teknikleri:', agirlik: 7 },
+      { id: 'zedelenme', ad: 'Zedelenme:', agirlik: 5 },
+      { id: 'biyolojik', ad: 'Biyolojik Etmenler:', agirlik: 7 },
+      { id: 'kan', ad: 'Kan:', agirlik: 7 },
+      { id: 'savunma', ad: 'Savunma:', agirlik: 7 },
+      { id: 'secmeli', ad: 'Seçmeli:', agirlik: 4 },
     ],
   },
   {
     id: 'uc',
-    onek: 'xoxx',
     sekme: '3. Sınıf',
     satirYuksekligi: 36,
     sayiUstBosluk: 1,
     ortakSonek: ':',
     bloklar: [
-      { id: 'xoxxProf', ad: 'Tıpta Profesyonellik', agirlik: 2 },
-      { id: 'xoxxGebelikNotu', ad: 'Gebelik Ve Doğum:', agirlik: 5 },
-      { id: 'xoxxTravmaNotu', ad: 'Travma:', agirlik: 5 },
-      { id: 'xoxxSolDolNotu', ad: 'Solunum Ve Dolaşım:', agirlik: 6 },
-      { id: 'xoxxEnfeksiyonNotu', ad: 'Enfeksiyon:', agirlik: 6 },
-      { id: 'xoxxYaslanmaNotu', ad: 'Yaşlanma:', agirlik: 5 },
-      { id: 'xoxxEndokrinNotu', ad: 'Endokrin Sistem:', agirlik: 6 },
-      { id: 'xoxxSindirimNotu', ad: 'Sindirim Sistemi:', agirlik: 5 },
-      { id: 'xoxxtumor', ad: 'Tümörler:', agirlik: 5 },
-      { id: 'xoxxnoro', ad: 'Nöropsikiyatriye Giriş:', agirlik: 5 },
-      { id: 'xoxxSecmeliNotu', ad: 'Seçmeli:', agirlik: 4 },
+      { id: 'profesyonellik', ad: 'Tıpta Profesyonellik', agirlik: 2 },
+      { id: 'gebelik', ad: 'Gebelik Ve Doğum:', agirlik: 5 },
+      { id: 'travma', ad: 'Travma:', agirlik: 5 },
+      { id: 'solunumDolasim', ad: 'Solunum Ve Dolaşım:', agirlik: 6 },
+      { id: 'enfeksiyon', ad: 'Enfeksiyon:', agirlik: 6 },
+      { id: 'yaslanma', ad: 'Yaşlanma:', agirlik: 5 },
+      { id: 'endokrin', ad: 'Endokrin Sistem:', agirlik: 6 },
+      { id: 'sindirim', ad: 'Sindirim Sistemi:', agirlik: 5 },
+      { id: 'tumor', ad: 'Tümörler:', agirlik: 5 },
+      { id: 'noro', ad: 'Nöropsikiyatriye Giriş:', agirlik: 5 },
+      { id: 'secmeli', ad: 'Seçmeli:', agirlik: 4 },
     ],
   },
 ];
 
-// Her sınıfta bloklardan sonra gelen ortak kalemler; id'ler sınıfın önekinden türer.
+// Her sınıfta bloklardan sonra gelen ortak kalemler; anahtar blok id'si gibi kullanılır.
 export const ORTAK_SATIRLAR = [
   { anahtar: 'mdu', ad: 'MDU' },
   { anahtar: 'pdo', ad: 'PDÖ' },
@@ -83,15 +81,8 @@ export const ORTAK_SATIRLAR = [
   { anahtar: 'final', ad: 'Final' },
 ];
 
-// Sınıfın ortak kalemlerinin input id'leri, Gelişim kutusunun id'si ve sonuç anahtarı
-export const ortakIdler = (sinif) => ({
-  mdu: `${sinif.onek}MDUNotu`,
-  pdo: `${sinif.onek}PDONotu`,
-  gelisim: `${sinif.onek}GelisimNotu`,
-  final: `${sinif.onek}FinalNotu`,
-  gelisimKutusu: `${sinif.onek}gCheck`,
-  sonuc: `${sinif.onek}sonuc`,
-});
+// Bir kalemin (blok, ortak kalem ya da "sonuc") kutu id'si ve localStorage anahtarı: "uc-gebelik"
+export const kutuId = (sinif, anahtar) => `${sinif.id}-${anahtar}`;
 
 // ---- Metinler ----------------------------------------------------------------
 // Sonuç mesajları her hesapta bu listelerden rastgele seçilir.

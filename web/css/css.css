@@ -1,6 +1,8 @@
+/* Sayfa yapısı js/app.js'in başındaki şemada. Bölümler sayfadaki sırayla dizili. */
+
 /* ---- Temel ---------------------------------------------------------------- */
 
-html, body, div, span, a, img, ul, li, form, label, input {
+html, body, main, nav, section, footer, div, span, h2, h3, p, a, img, ul, li, form, label, input, button {
     margin: 0;
     padding: 0;
     border: 0;
@@ -11,8 +13,10 @@ html, body, div, span, a, img, ul, li, form, label, input {
 ul { list-style: none; }
 a { text-decoration: none; }
 :focus { outline: 0; }
+/* Klavyeyle gezenler hangi düğmede olduğunu görsün (fareyle tıklayınca çıkmaz). */
+.sekme:focus-visible,
+[role="button"]:focus-visible { outline: 2px solid #457fa5; outline-offset: 2px; }
 ::selection { background-color: #555; color: #fff; }
-hr { color: black; opacity: 1; }
 
 body {
     font-family: 'Montserrat Alternates', sans-serif;
@@ -20,59 +24,47 @@ body {
     background-color: #b7dcba;
 }
 
-/* ---- Sekmeler -------------------------------------------------------------- */
-
-.container2 {
+.sayfa {
     width: 700px;
     height: 1500px;
     margin: auto;
 }
 
-ul.sekmeler {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+/* ---- Sekmeler -------------------------------------------------------------- */
+
+.sekmeler {
     background: #58975d;
     overflow: hidden;
     text-align: center;
 }
 
-ul.sekmeler li {
-    background: none;
-    color: #fff;
+.sekme {
+    box-sizing: content-box;
     display: inline-block;
     padding: 10px 60px;
+    background: none;
+    color: #fff;
     cursor: pointer;
     user-select: none;
 }
 
-ul.sekmeler li:hover { background: rgba(0, 0, 0, 0.5); }
+.sekme:hover { background: rgba(0, 0, 0, 0.5); }
 
-ul.sekmeler li.tiklanan {
+.sekme[aria-selected="true"] {
     background: #fff;
     color: #222;
     width: 210px;
-    animation: tiklaanim 0.2s ease;
+    animation: sekme-genisle 0.2s ease;
 }
 
-.sekme-icerik {
-    display: none;
-    background: transparent;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
+.panel:not([hidden]) { animation: panel-belir 0.2s ease; }
 
-.sekme-icerik.tiklanan {
-    display: block;
-    animation: sekmeanim 0.2s ease;
-}
-
-@keyframes tiklaanim {
+@keyframes sekme-genisle {
     from { width: 60px; }
     to { width: 210px; }
 }
 
-@keyframes sekmeanim {
+@keyframes panel-belir {
     from { opacity: 0; position: relative; top: -50px; }
     to { opacity: 1; position: relative; top: 0; }
 }
@@ -81,13 +73,13 @@ ul.sekmeler li.tiklanan {
    Sınıfa göre değişenler HTML'de değişken olarak gelir:
    --satir (satır yüksekliği), --sayi-ust (sonuç sayısının üst boşluğu) */
 
-.govde {
+.panel-zemin {
     height: 100%;
     line-height: 1;
     background: #b7dcba;
 }
 
-.kutu {
+.hesap-kutusu {
     width: 680px;
     height: 580px;
     background: #eccbbe;
@@ -96,7 +88,7 @@ ul.sekmeler li.tiklanan {
     margin: 20px auto;
 }
 
-.baslik {
+.hesap-basligi {
     float: right;
     position: relative;
     left: -30px;
@@ -104,7 +96,9 @@ ul.sekmeler li.tiklanan {
     font-size: 50px;
 }
 
-.tablo {
+/* ---- Not tablosu ------------------------------------------------------------- */
+
+.not-tablosu {
     color: rgb(0, 0, 0);
     margin: 0 auto;
     width: 245px;
@@ -115,11 +109,12 @@ ul.sekmeler li.tiklanan {
     left: 5px;
 }
 
-.bloksnotes { height: 30px; }
-.bloks { float: left; width: 160px; }
-.satir { height: var(--satir); }
+.not-tablosu-basligi { height: 30px; }
+.not-tablosu-basligi .not-adi { float: left; width: 160px; }
 
-.ad {
+.not-satiri { height: var(--satir); }
+
+.not-satiri .not-adi {
     position: relative;
     width: 160px;
     float: left;
@@ -127,7 +122,7 @@ ul.sekmeler li.tiklanan {
     margin-top: 5px;
 }
 
-.girdi {
+.not-kutusu {
     width: 60px;
     height: 30px;
     border-radius: 10%;
@@ -137,12 +132,12 @@ ul.sekmeler li.tiklanan {
     font-family: "indie flower";
 }
 
-.girdi[data-durum="fazla"] { border-color: #b1a928; }
-.girdi[data-durum="bos"] { border-color: #dc2a2a; }
+.not-kutusu[data-durum="fazla"] { border-color: #b1a928; }
+.not-kutusu[data-durum="bos"] { border-color: #dc2a2a; }
 
 /* ---- Sonuç alanı ------------------------------------------------------------- */
 
-.cikti {
+.sonuc-alani {
     position: relative;
     width: 432px;
     height: 500px;
@@ -151,37 +146,33 @@ ul.sekmeler li.tiklanan {
     float: right;
 }
 
-.final,
-.sayi,
-.sonuc,
-.hesapla-dugme {
+.final-yazisi,
+.sonuc-sayisi,
+.sonuc-mesaji,
+.hesapla-dugmesi {
     top: 50px;
     left: 0;
 }
 
-.final {
+.final-yazisi {
     position: relative;
     display: block;
     width: 120px;
     height: 80px;
-    border: 0 solid #457fa5;
     margin: 1px auto;
-    text-align: center;
     font: bold 40px tahoma;
     color: #000;
     line-height: 80px;
     border-radius: 10px;
 }
 
-.final.genis { width: 300px; }
+.final-yazisi.genis { width: 300px; }
 
-.sayi {
+.sonuc-sayisi {
     display: block;
     width: 160px;
     height: 40px;
-    border: 0 solid #457fa5;
     margin: var(--sayi-ust) auto;
-    text-align: center;
     font: bold 50px tahoma;
     color: #000;
     line-height: 40px;
@@ -189,43 +180,39 @@ ul.sekmeler li.tiklanan {
     position: relative;
 }
 
-.sonuc {
+.sonuc-mesaji {
     position: relative;
     display: block;
     width: 432px;
     height: 80px;
-    border: 0 solid #457fa5;
     margin: 1px auto;
-    text-align: center;
     font: bold 50px tahoma;
     color: #000;
     border-radius: 10px;
 }
 
-.sonuc-metin {
+.sonuc-metni {
     position: relative;
     vertical-align: sub;
 }
 
-.sonuc[data-durum="fazla"] { color: #b1a928; }
-.sonuc[data-durum="kaldi"],
-.sonuc[data-durum="baraj"] { color: #dc2a2a; }
-.sonuc[data-durum="gecti"] { color: #56b856; }
-.sonuc[data-durum="gerek"] { color: black; }
+.sonuc-mesaji[data-durum="fazla"] { color: #b1a928; }
+.sonuc-mesaji[data-durum="kaldi"],
+.sonuc-mesaji[data-durum="baraj"] { color: #dc2a2a; }
+.sonuc-mesaji[data-durum="gecti"] { color: #56b856; }
+.sonuc-mesaji[data-durum="gerek"] { color: black; }
 
 /* ---- HESAPLA düğmesi ve sayaç ------------------------------------------------ */
 
-.hesapla-dugme {
+.hesapla-dugmesi {
     z-index: 1;
     position: relative;
     border-radius: 100%;
     font-weight: bold;
-    text-align: center;
     width: 160px;
     height: 160px;
     margin: 0 auto;
     display: block;
-    border: none;
     font-size: 34px;
     background: #e46938;
     color: rgb(255, 255, 255);
@@ -235,25 +222,23 @@ ul.sekmeler li.tiklanan {
     font-family: "indie flower";
 }
 
-.hesapla-dugme:hover {
+.hesapla-dugmesi:hover {
     background: rgb(255, 255, 255);
     color: #e46938;
     border: 3px solid #e46938;
     border-radius: 0;
 }
 
-.hesapla {
+.hesapla-yazisi {
     position: relative;
     top: 60px;
-    cursor: pointer;
     font-size: 38px;
     width: 160px;
     height: 80px;
-    text-align: center;
     user-select: none;
 }
 
-.sayacekran {
+.sayac {
     position: relative;
     margin: auto;
     width: max-content;
@@ -265,9 +250,9 @@ ul.sekmeler li.tiklanan {
     border-radius: 20%;
 }
 
-/* ---- Temizle (çöp kutusu) simgesi --------------------------------------------- */
+/* ---- Temizle (çöp kutusu) düğmesi ----------------------------------------------- */
 
-.svgclass {
+.temizle-dugmesi {
     position: relative;
     display: inline-block;
     border: solid 2px #c96b46;
@@ -281,13 +266,15 @@ ul.sekmeler li.tiklanan {
     cursor: pointer;
 }
 
-.kapak, .kova, .kapakimg, .kovaimg {
+.temizle-dugmesi svg,
+.temizle-dugmesi image {
     position: relative;
     z-index: 2;
     transition-duration: 0.2s;
 }
 
-.kapakimg, .kapak {
+.cop-kapagi,
+.cop-kapagi image {
     transform: rotate(0deg);
     left: 0;
     top: 0;
@@ -295,37 +282,37 @@ ul.sekmeler li.tiklanan {
     height: 4px;
 }
 
-.kovaimg, .kova {
+.cop-kovasi,
+.cop-kovasi image {
     width: 23px;
     height: 23px;
 }
 
-.svgclass:hover .kapak {
+.temizle-dugmesi:hover .cop-kapagi {
     transform: rotate(29deg);
     left: 4px;
     top: -6px;
 }
 
-.hesapla-dugme:hover ~ .svgclass { right: 80px; }
+.hesapla-dugmesi:hover ~ .temizle-dugmesi { right: 80px; }
 
 /* ---- Bilgi notu ----------------------------------------------------------------- */
 
-.bilgi {
+.bilgi-notu {
     position: relative;
     top: 100px;
     width: 340px;
     height: 80px;
     margin: auto;
-    text-align: center;
     user-select: none;
 }
 
-.cikti:has(.hesapla-dugme:hover) .bilgi {
+.sonuc-alani:has(.hesapla-dugmesi:hover) .bilgi-notu {
     top: 94px;
     transition-duration: 0.2s;
 }
 
-/* ---- Uygulama rozetleri ve ders bağlantıları ------------------------------------- */
+/* ---- Uygulama rozetleri ve ders videoları ---------------------------------------- */
 
 .uygulamalar {
     text-align: center;
@@ -335,51 +322,38 @@ ul.sekmeler li.tiklanan {
 
 .uygulamalar img { height: 150px; }
 
-.inco { background-color: #ffffff52; }
-
-.column {
+.ders-sutunu {
     margin: 2px;
     padding-left: 5px;
     float: left;
     width: 22%;
 }
 
-.row::after {
+.ders-satiri::after {
     content: "";
     display: table;
     clear: both;
 }
 
-.baglantilar {
+.ders-basligi,
+.ders-ara-basligi { background-color: #ffffff52; }
+
+.ders-listeleri {
     margin: auto;
     color: black;
     font-size: 20px;
 }
 
-.mannnnyak { color: black; }
-.mannnnyak:hover { text-decoration: underline; }
-.alt-baslik { font-size: 16px; }
+.ders-baglantisi { color: black; }
+.ders-baglantisi:hover { text-decoration: underline; }
+.ders-ara-basligi { font-size: 16px; }
 
 /* ---- Alt bilgi ve uyarı ---------------------------------------------------------- */
 
-.yusuf {
-    margin: auto;
-    width: 700px;
-    cursor: pointer;
-    font-family: 'Satisfy', cursive;
-    font-size: 20px;
-    text-align: center;
-    display: block;
-    user-select: none;
-    color: inherit;
-}
-
-#komport {
+.alt-bilgi {
     position: relative;
     cursor: pointer;
-    display: block;
     margin: 0 1px 1px;
-    width: auto;
     height: 100px;
     background-color: rgba(255, 255, 255, 0.2);
     color: black;
@@ -388,18 +362,30 @@ ul.sekmeler li.tiklanan {
     user-select: none;
 }
 
-#hakim { color: inherit; display: block; }
+.imza {
+    margin: auto;
+    width: 700px;
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+    display: block;
+    color: inherit;
+}
 
-#acik {
+.ayrac {
+    border: 1px solid gray;
+    background-color: gray;
+}
+
+.hakkinda-baglantisi { color: inherit; display: block; }
+
+.guncelleme-notu {
     font-size: 12px;
     margin: auto;
     opacity: 0.5;
-    user-select: none;
     width: 700px;
-    text-align: center;
 }
 
-#alert {
+.uyari {
     position: fixed;
     bottom: 0;
     left: 50%;
@@ -414,10 +400,10 @@ ul.sekmeler li.tiklanan {
     font-weight: bold;
     border-radius: 3px;
     background-color: #dc2a2a;
-    animation: bounce-in-out 3s ease-in-out;
+    animation: uyari-zipla 3s ease-in-out;
 }
 
-@keyframes bounce-in-out {
+@keyframes uyari-zipla {
     0% { bottom: 0%; opacity: 0; }
     5% { bottom: 50%; opacity: 1; }
     95% { bottom: 50%; opacity: 1; }
