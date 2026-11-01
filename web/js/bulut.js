@@ -9,13 +9,17 @@ const AYAR = {
   projectId: 'omunot',
 };
 
+const YEREL = ['localhost', '127.0.0.1'].includes(location.hostname);
+
 /** @param sayacDegisti  sayaç değeri her güncellendiğinde çağrılır */
 export async function bulutuBaslat(sayacDegisti) {
-  const [{ initializeApp }, { getDatabase, ref, onValue, set, runTransaction }] = await Promise.all([
+  const [{ initializeApp }, { getDatabase, connectDatabaseEmulator, ref, onValue, set, runTransaction }] = await Promise.all([
     import(`${SDK}/firebase-app.js`),
     import(`${SDK}/firebase-database.js`),
   ]);
   const db = getDatabase(initializeApp(AYAR));
+  // Yerelde (firebase emulators:start) canlı veritabanına dokunma; emülatöre bağlan.
+  if (YEREL) connectDatabaseEmulator(db, location.hostname, 9000);
   const sayacRef = ref(db, 'sayac');
   let sayac = null;
 
