@@ -4,203 +4,104 @@
 //
 //  Created by yusuf on 09.04.24.
 //
+//  Değişiklik anında kaydedilir ve ekranda sonucu olan sınıflar yeniden hesaplanır.
+//
 
 import SwiftUI
 
-
-
 struct SettingsPage: View {
-    
-    /////// Seçilen sayıyı takip etmek için bir state variable
-    
-    @State var settings : Settings = Settings()
-    @State var gecmeNotu = 70
-    @State var finalBaraji = 60
-    
-    @State var babalarKatsayilar : [Int] = [10,10,5,25]
-    
-    @State var blokKatsayisi = 50
-    @State var gecmeVirgul = true
-    @State var finalVirgul = true
-    
-    
-    @State var birBlokKatsayilari :[Int] = [ ]
-    @State var ikiBlokKatsayilari :[Int] = [ ]
-    @State var ucBlokKatsayilari :[Int] = [ ]
-    
-    @State var total1 = 0
-    @State var total2 = 0
-    @State var total3 = 0
-    
-    
-    
-    
-    
+    @EnvironmentObject private var m: HesapModeli
+    @State private var sifirlaSor = false
+
+    /// Ayarların bir alanına bağlanan Binding; her yazım HesapModeli'nden geçer.
+    private func bag<T>(_ yol: WritableKeyPath<Ayarlar, T>) -> Binding<T> {
+        Binding(get: { m.ayarlar[keyPath: yol] }, set: { yeni in
+            var a = m.ayarlar
+            a[keyPath: yol] = yeni
+            m.ayarlariDegistir(a)
+        })
+    }
+
     var body: some View {
-        
-        Form{
-            //Basic Settings
-            Section ( header: Text("Hesaplama Detaylari")){
-                Toggle(isOn: $gecmeVirgul, label: {
-                    Text("Gecme notu \(String(format: "%.2f", (Double(gecmeNotu) - 0.5))) olarak hesapla")
-                    
-                    
-                })
-                .onAppear{
-                    settings = Settings.loadFromLocalStorage() ?? Settings()
-                    
+        let a = m.ayarlar
+        NavigationStack {
+            Form {
+                Section("Hesaplama detayları") {
+                    SayiSecici(etiket: "Geçme notu", deger: bag(\.gecmeNotu))
+                    Toggle("Geçme notunu \(sayiYaz(Double(a.gecmeNotu) - 0.5)) olarak hesapla", isOn: bag(\.gecmeVirgul))
+                    SayiSecici(etiket: "Final barajı", deger: bag(\.finalBaraji))
+                    Toggle("Final barajını \(sayiYaz(Double(a.finalBaraji) - 0.5)) olarak hesapla", isOn: bag(\.finalVirgul))
                 }
-                .onChange ( of: gecmeVirgul)  { newValue in
-                    gecmeVirgul=newValue
-                    settings.gecmeVirgul=newValue
-                    
-                }
-                Picker(selection: $gecmeNotu, label: Text("Gecme Notu")) {
-                    ForEach(Array(0...100), id: \.self) { number in
-                        Text("\(number)")
-                    }}.onChange ( of: gecmeNotu)  { newValue in
-                        gecmeNotu=Int(newValue)
-                        settings.gecmeNotu=Double(gecmeNotu)
-                    }
-                Toggle(isOn: $finalVirgul, label: {
-                    Text("Final barajını \(String(format: "%.2f",Double(finalBaraji)-0.5)) olarak hesapla")
-                }).onChange ( of: finalVirgul)  { newValue in
-                    finalVirgul=newValue
-                    settings.finalVirgul=newValue
-                }
-                Picker(selection: $finalBaraji, label: Text("Final Barajı")) {
-                    ForEach(Array(0...100), id: \.self) { number in
-                        Text("\(number)")
-                    }}.onChange ( of: finalBaraji)  { newValue in
-                        finalBaraji=Int(newValue)
-                        settings.finalBaraji=Double(finalBaraji)
-                    }
-                
-                
-            }
-            
-            
-            Section ( header: Text("Katsayı ayarları")){
-                
-                
-                
-                Picker(selection: $blokKatsayisi, label: Text("Blokların yüzdesi")) {
-                    ForEach(Array(0...100), id: \.self) { number in
-                        Text("\(number)")
-                    }}.onChange ( of: blokKatsayisi)  { newValue in
-                        blokKatsayisi=newValue
-                        settings.blokKatsayisi=newValue
-                    }
-                
-                ForEach(settings.babalar.indices, id: \.self) { number in
-                    Picker(selection: $babalarKatsayilar[number] , label: Text(settings.babalar[number])) {
-                        ForEach(Array(0...100), id: \.self) { number in
-                            Text("%\(number)")
+
+                Section {
+                    SayiSecici(etiket: "Blokların payı", deger: bag(\.blokPayi), onek: "%")
+                    SayiSecici(etiket: "MDU", deger: bag(\.mduPayi), onek: "%")
+                    SayiSecici(etiket: "PDÖ", deger: bag(\.pdoPayi), onek: "%")
+                    SayiSecici(etiket: "Gelişim", deger: bag(\.gelisimPayi), onek: "%")
+                    SayiSecici(etiket: "Final", deger: bag(\.finalPayi), onek: "%")
+                } header: {
+                    Text("Katsayı ayarları")
+                } footer: {
+                    VStack(alignment: .leading, spacing: 4) {
+                        if a.payToplami != 100 {
+                            Text("Payların toplamı %\(a.payToplami); 100 olmalı, yoksa ortalama yanlış çıkar.")
                         }
-                    }.onChange ( of: babalarKatsayilar[number])  { newValue in
-                        babalarKatsayilar[number]=newValue
-                        settings.babalarKatsayilar=babalarKatsayilar
-                    }
-                    
-                }
-                
-                
-                
-                
-            }.onAppear{
-                birBlokKatsayilari = settings.bir.katsayilar
-                ikiBlokKatsayilari = settings.iki.katsayilar
-                ucBlokKatsayilari = settings.uc.katsayilar
-            }
-            Section ( header: Text("1. Sınıf Blok Katsayıları")){
-                ForEach(birBlokKatsayilari.indices, id: \.self) { index in
-                    Picker(selection: $birBlokKatsayilari[index], label: Text(settings.bir.bloklar[index])) {
-                        ForEach(Array(0...100), id: \.self) { index in
-                            Text("x\(index)")
+                        if a.finalPayi == 0 {
+                            Text("Final payı 0 iken \"finalden kaç almalıyım\" hesaplanamaz.")
                         }
-                    }.onChange ( of: birBlokKatsayilari[index])  { newValue in
-                        birBlokKatsayilari[index]=newValue
-                        settings.bir.katsayilar = birBlokKatsayilari
-                        print("bir")
                     }
-                    
+                    .foregroundColor(.red)
                 }
-                
-            }
-            Section ( header: Text("2. Sınıf Blok Katsayıları")){
-                ForEach(ikiBlokKatsayilari.indices, id: \.self) { index in
-                    Picker(selection: $ikiBlokKatsayilari[index], label: Text(settings.iki.bloklar[index])) {
-                        ForEach(Array(0...100), id: \.self) { index in
-                            Text("x\(index)")
+
+                ForEach(SINIFLAR) { sinif in
+                    Section("\(sinif.sekme) blok katsayıları") {
+                        let agirliklar = a.agirliklar(sinif)
+                        ForEach(sinif.bloklar.indices, id: \.self) { i in
+                            SayiSecici(
+                                etiket: sinif.bloklar[i].ad,
+                                deger: Binding(get: { agirliklar[i] },
+                                               set: { m.ayarlariDegistir(m.ayarlar.agirlikDegistir(sinif, i, $0)) }),
+                                onek: "x"
+                            )
                         }
-                    }.onChange ( of: ikiBlokKatsayilari[index])  { newValue in
-                        ikiBlokKatsayilari[index]=newValue
-                        settings.iki.katsayilar = ikiBlokKatsayilari
-                        print("bir")
                     }
-                    
+                }
+
+                Section {
+                    Button("Ayarları varsayılana sıfırla", role: .destructive) { sifirlaSor = true }
+                        .frame(maxWidth: .infinity)
+                } footer: {
+                    Link("2024 yılında Yusuf Özil tarafından tasarlanmıştır.", destination: URL(string: INSTAGRAM)!)
+                        .font(.footnote)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.top, 8)
                 }
             }
-            
-            Section ( header: Text("3. Sınıf Blok Katsayıları")){
-                ForEach(ucBlokKatsayilari.indices, id: \.self) { index in
-                    Picker(selection: $ucBlokKatsayilari[index], label: Text(settings.uc.bloklar[index])) {
-                        ForEach(Array(0...100), id: \.self) { index in
-                            Text("x\(index)")
-                        }
-                    }.onChange ( of: ucBlokKatsayilari[index])  { newValue in
-                        ucBlokKatsayilari[index]=newValue
-                        settings.uc.katsayilar = ucBlokKatsayilari
-                        print("bir")
-                    }
-                    
-                }
+            .navigationTitle("Ayarlar")
+            .navigationBarTitleDisplayMode(.inline)
+            .alert("Ayarlar sıfırlansın mı?", isPresented: $sifirlaSor) {
+                Button("Sıfırla", role: .destructive) { m.ayarlariSifirla() }
+                Button("Vazgeç", role: .cancel) {}
+            } message: {
+                Text("Geçme notu, final barajı ve tüm katsayılar varsayılana döner. Girdiğin notlar silinmez.")
             }
-            Section {
-                Button(action: resetSettings) {
-                    Text("Ayarları Varsayılana Sıfırla")
-                }
-                .foregroundColor(.red)
-                .frame(maxWidth: .infinity, alignment: .center)
-                
-                
-                
-            }
-            
-            Text("2024 Yılında Yusuf Özil tarafından tasarlanmıştır.")
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .foregroundColor(.blue)
-                .font(.footnote).onTapGesture {
-                    openInstagram()
-                }
-            
-            
-            
-            
         }
-        .onDisappear {
-            settings.saveToLocalStorage()
-        }
-        
     }
-    
-    func resetSettings() {
-        // Ayarları sıfırlama kodunuz
-        settings = Settings()
-        settings.saveToLocalStorage()
-    }
-    
-    
-    
-    func openInstagram() {
-        // Geliştiricinin Instagram profilini açma kodunuz
-        guard let url = URL(string: "https://www.instagram.com/yusufozill/") else { return }
-        UIApplication.shared.open(url)
-    }
-    
 }
-struct SettingsPage_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsPage()
+
+/// 0–100 arası tam sayı seçici.
+private struct SayiSecici: View {
+    let etiket: String
+    @Binding var deger: Int
+    var onek = ""
+
+    var body: some View {
+        Picker(etiket, selection: $deger) {
+            ForEach(0...100, id: \.self) { Text("\(onek)\($0)").tag($0) }
+        }
     }
+}
+
+#Preview {
+    SettingsPage().environmentObject(HesapModeli())
 }

@@ -15,12 +15,12 @@
 		885E66AF2BC5E8D900BB68A0 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 885E66AE2BC5E8D900BB68A0 /* FirebaseAnalyticsSwift */; };
 		885E66B12BC5E8D900BB68A0 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 885E66B02BC5E8D900BB68A0 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		885E66B32BC5E8D900BB68A0 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 885E66B22BC5E8D900BB68A0 /* FirebaseAppCheck */; };
-		885E66B82BC5EC7E00BB68A0 /* Sinif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66B72BC5EC7E00BB68A0 /* Sinif.swift */; };
+		885E66B82BC5EC7E00BB68A0 /* Hesap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66B72BC5EC7E00BB68A0 /* Hesap.swift */; };
 		885E66BA2BC5EDB900BB68A0 /* ColorFromHexCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66B92BC5EDB900BB68A0 /* ColorFromHexCode.swift */; };
-		885E66BE2BC69B2E00BB68A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66BD2BC69B2E00BB68A0 /* User.swift */; };
-		885E66C02BC69CE100BB68A0 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66BF2BC69CE100BB68A0 /* Settings.swift */; };
-		885E66C22BC69EFC00BB68A0 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66C12BC69EFC00BB68A0 /* LocalStorage.swift */; };
-		885E66C42BC69F0A00BB68A0 /* FirebaseDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66C32BC69F0A00BB68A0 /* FirebaseDatabase.swift */; };
+		885E66BE2BC69B2E00BB68A0 /* Mufredat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66BD2BC69B2E00BB68A0 /* Mufredat.swift */; };
+		885E66C02BC69CE100BB68A0 /* Ayarlar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66BF2BC69CE100BB68A0 /* Ayarlar.swift */; };
+		885E66C22BC69EFC00BB68A0 /* Depo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66C12BC69EFC00BB68A0 /* Depo.swift */; };
+		885E66C42BC69F0A00BB68A0 /* Sayac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885E66C32BC69F0A00BB68A0 /* Sayac.swift */; };
 		885E66C72BC6C30800BB68A0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 885E66C62BC6C30800BB68A0 /* FirebaseFirestore */; };
 		885E66C92BC6C30F00BB68A0 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 885E66C82BC6C30F00BB68A0 /* FirebaseDatabase */; };
 		885E66CB2BC6C35A00BB68A0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 885E66CA2BC6C35A00BB68A0 /* FirebaseFirestoreSwift */; };
@@ -31,7 +31,7 @@
 		887DAD7A2BC33F0C0029A274 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DAD792BC33F0C0029A274 /* ContentView.swift */; };
 		887DAD7C2BC33F0D0029A274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887DAD7B2BC33F0D0029A274 /* Assets.xcassets */; };
 		887DAD7F2BC33F0D0029A274 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 887DAD7E2BC33F0D0029A274 /* Preview Assets.xcassets */; };
-		887DAD892BC33F0D0029A274 /* omunotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DAD882BC33F0D0029A274 /* omunotTests.swift */; };
+		887DAD892BC33F0D0029A274 /* HesapTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DAD882BC33F0D0029A274 /* HesapTest.swift */; };
 		887DAD932BC33F0D0029A274 /* omunotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DAD922BC33F0D0029A274 /* omunotUITests.swift */; };
 		887DAD952BC33F0D0029A274 /* omunotUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887DAD942BC33F0D0029A274 /* omunotUITestsLaunchTests.swift */; };
 		88BF8DF32BC5406000D6E427 /* MontserratAlternates-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88BF8DF22BC5406000D6E427 /* MontserratAlternates-Regular.ttf */; };
@@ -66,19 +66,19 @@
 		885E66A32BC56F6200BB68A0 /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		885E66A52BC56F9D00BB68A0 /* CalculatorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorScreen.swift; sourceTree = "<group>"; };
 		885E66A72BC5E84100BB68A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		885E66B72BC5EC7E00BB68A0 /* Sinif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sinif.swift; sourceTree = "<group>"; };
+		885E66B72BC5EC7E00BB68A0 /* Hesap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hesap.swift; sourceTree = "<group>"; };
 		885E66B92BC5EDB900BB68A0 /* ColorFromHexCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFromHexCode.swift; sourceTree = "<group>"; };
-		885E66BD2BC69B2E00BB68A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		885E66BF2BC69CE100BB68A0 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		885E66C12BC69EFC00BB68A0 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
-		885E66C32BC69F0A00BB68A0 /* FirebaseDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabase.swift; sourceTree = "<group>"; };
+		885E66BD2BC69B2E00BB68A0 /* Mufredat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mufredat.swift; sourceTree = "<group>"; };
+		885E66BF2BC69CE100BB68A0 /* Ayarlar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ayarlar.swift; sourceTree = "<group>"; };
+		885E66C12BC69EFC00BB68A0 /* Depo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Depo.swift; sourceTree = "<group>"; };
+		885E66C32BC69F0A00BB68A0 /* Sayac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sayac.swift; sourceTree = "<group>"; };
 		887DAD742BC33F0C0029A274 /* omunot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = omunot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887DAD772BC33F0C0029A274 /* omunotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omunotApp.swift; sourceTree = "<group>"; };
 		887DAD792BC33F0C0029A274 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		887DAD7B2BC33F0D0029A274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		887DAD7E2BC33F0D0029A274 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		887DAD842BC33F0D0029A274 /* omunotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = omunotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		887DAD882BC33F0D0029A274 /* omunotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omunotTests.swift; sourceTree = "<group>"; };
+		887DAD882BC33F0D0029A274 /* HesapTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HesapTest.swift; sourceTree = "<group>"; };
 		887DAD8E2BC33F0D0029A274 /* omunotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = omunotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		887DAD922BC33F0D0029A274 /* omunotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omunotUITests.swift; sourceTree = "<group>"; };
 		887DAD942BC33F0D0029A274 /* omunotUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = omunotUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -128,11 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				885E66B92BC5EDB900BB68A0 /* ColorFromHexCode.swift */,
-				885E66B72BC5EC7E00BB68A0 /* Sinif.swift */,
-				885E66BD2BC69B2E00BB68A0 /* User.swift */,
-				885E66BF2BC69CE100BB68A0 /* Settings.swift */,
-				885E66C12BC69EFC00BB68A0 /* LocalStorage.swift */,
-				885E66C32BC69F0A00BB68A0 /* FirebaseDatabase.swift */,
+				885E66B72BC5EC7E00BB68A0 /* Hesap.swift */,
+				885E66BD2BC69B2E00BB68A0 /* Mufredat.swift */,
+				885E66BF2BC69CE100BB68A0 /* Ayarlar.swift */,
+				885E66C12BC69EFC00BB68A0 /* Depo.swift */,
+				885E66C32BC69F0A00BB68A0 /* Sayac.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -194,7 +194,7 @@
 		887DAD872BC33F0D0029A274 /* omunotTests */ = {
 			isa = PBXGroup;
 			children = (
-				887DAD882BC33F0D0029A274 /* omunotTests.swift */,
+				887DAD882BC33F0D0029A274 /* HesapTest.swift */,
 			);
 			path = omunotTests;
 			sourceTree = "<group>";
@@ -371,14 +371,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				88BF8DFB2BC5592700D6E427 /* animator.swift in Sources */,
-				885E66C22BC69EFC00BB68A0 /* LocalStorage.swift in Sources */,
+				885E66C22BC69EFC00BB68A0 /* Depo.swift in Sources */,
 				887DAD7A2BC33F0C0029A274 /* ContentView.swift in Sources */,
 				887DAD782BC33F0C0029A274 /* omunotApp.swift in Sources */,
-				885E66C42BC69F0A00BB68A0 /* FirebaseDatabase.swift in Sources */,
-				885E66B82BC5EC7E00BB68A0 /* Sinif.swift in Sources */,
-				885E66BE2BC69B2E00BB68A0 /* User.swift in Sources */,
+				885E66C42BC69F0A00BB68A0 /* Sayac.swift in Sources */,
+				885E66B82BC5EC7E00BB68A0 /* Hesap.swift in Sources */,
+				885E66BE2BC69B2E00BB68A0 /* Mufredat.swift in Sources */,
 				885E66BA2BC5EDB900BB68A0 /* ColorFromHexCode.swift in Sources */,
-				885E66C02BC69CE100BB68A0 /* Settings.swift in Sources */,
+				885E66C02BC69CE100BB68A0 /* Ayarlar.swift in Sources */,
 				885E66A42BC56F6200BB68A0 /* SettingsPage.swift in Sources */,
 				885E66A62BC56F9D00BB68A0 /* CalculatorScreen.swift in Sources */,
 			);
@@ -389,7 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88BF8DFC2BC5592700D6E427 /* animator.swift in Sources */,
-				887DAD892BC33F0D0029A274 /* omunotTests.swift in Sources */,
+				887DAD892BC33F0D0029A274 /* HesapTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
