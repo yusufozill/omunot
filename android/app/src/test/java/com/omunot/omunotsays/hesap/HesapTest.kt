@@ -21,8 +21,10 @@ class HesapTest {
         for (i in 0 until ornekler.length()) {
             val o = ornekler.getJSONObject(i)
             val sinif = SINIFLAR.first { it.id == o.getString("sinif") }
-            val g = o.getJSONObject("girdi")
-            val girdi = g.keys().asSequence().associateWith { g.getString(it) }
+            // notlar kutuların ekrandaki sırasıyla gelir; girdiIdleri de aynı sırada.
+            val notlar = o.getJSONArray("notlar")
+            assertEquals(sinif.girdiIdleri.size, notlar.length())
+            val girdi = sinif.girdiIdleri.withIndex().associate { (j, id) -> id to notlar.getString(j) }
             val s = hesapla(sinif, girdi, o.getBoolean("gelisimVar"))
             val ad = "örnek $i ($girdi)"
             assertEquals("$ad ortalama", o.getDouble("sonuc"), s.ortalama, 0.0)

@@ -83,7 +83,8 @@ class HesapViewModel(app: Application) : AndroidViewModel(app) {
     fun gelisimDegistir(acik: Boolean) {
         gelisimVar = acik
         depo.gelisimVar = acik
-        if (!acik) SINIFLAR.forEach { alanDurumlari.remove(it.gelisim) }
+        // Web'deki gibi: kapanınca Gelişim kutuları boşalır (hesaba girmediği görünsün).
+        if (!acik) SINIFLAR.forEach { notGir(it.gelisim, "") }
         bildirimKanali.trySend(Bildirim(gelisimUyarisi(acik, ayarlar)))
         sonuclariYenile()
     }

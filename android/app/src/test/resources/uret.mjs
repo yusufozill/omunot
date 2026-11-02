@@ -1,9 +1,11 @@
 // Web hesap.js'ten golden örnekler üretir. Kullanım: node uret.mjs <hesap.js yolu> <çıktı>
+// Her örnekte `notlar`, kutuların ekrandaki sırasıdır: sabit olmayan bloklar, sonra MDU, PDÖ,
+// Gelişim, Final. Uygulamalar kendi alan id'lerini bu sıraya göre eşler (Android, iOS).
 import { writeFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
 const hesapYolu = process.argv[2];
 const { hesapla } = await import(pathToFileURL(hesapYolu).href);
-const { SINIFLAR, ortakIdler } = await import(pathToFileURL(hesapYolu.replace('hesap.js', 'data.js')).href);
+const { SINIFLAR } = await import(pathToFileURL(hesapYolu.replace('hesap.js', 'data.js')).href);
 
 let tohum = 12345;
 const rnd = () => ((tohum = (tohum * 1103515245 + 12345) % 2147483648) / 2147483648);
@@ -18,7 +20,6 @@ const deger = () => {
 const ornekler = [];
 for (let i = 0; i < 600; i++) {
   const sinif = SINIFLAR[i % 3];
-  const id = ortakIdler(sinif);
   const gelisimVar = rnd() > 0.3;
   const girdi = {};
   for (const b of sinif.bloklar) if (!b.sabit) girdi[b.id] = deger();
@@ -32,12 +33,20 @@ for (let i = 0; i < 600; i++) {
     if (yuksek) girdi[b.id] = aralik(70, 100);
     if (asiri) girdi[b.id] = aralik(110, 199);
   }
-  girdi[id.mdu] = yuksek ? aralik(70, 100) : asiri ? aralik(110, 199) : deger();
-  girdi[id.pdo] = yuksek ? aralik(70, 100) : asiri ? aralik(110, 199) : deger();
-  girdi[id.gelisim] = gelisimVar ? (yuksek ? aralik(60, 100) : asiri ? aralik(110, 199) : deger()) : '';
-  girdi[id.final] = mod === 1 || mod === 2 || mod === 5 ? '' : mod === 3 ? aralik(30, 100) : mod === 4 ? aralik(110, 199) : deger();
+  girdi.mdu = yuksek ? aralik(70, 100) : asiri ? aralik(110, 199) : deger();
+  girdi.pdo = yuksek ? aralik(70, 100) : asiri ? aralik(110, 199) : deger();
+  girdi.gelisim = gelisimVar ? (yuksek ? aralik(60, 100) : asiri ? aralik(110, 199) : deger()) : '';
+  girdi.final = mod === 1 || mod === 2 || mod === 5 ? '' : mod === 3 ? aralik(30, 100) : mod === 4 ? aralik(110, 199) : deger();
   const s = hesapla(sinif, girdi, gelisimVar);
-  ornekler.push({ sinif: sinif.id, gelisimVar, girdi, sonuc: Number(s.sonuc), sayi: Number(s.sayi), durum: s.durum });
+  const sira = [...sinif.bloklar.filter((b) => !b.sabit).map((b) => b.id), 'mdu', 'pdo', 'gelisim', 'final'];
+  ornekler.push({
+    sinif: sinif.id,
+    gelisimVar,
+    notlar: sira.map((k) => girdi[k]),
+    sonuc: Number(s.sonuc),
+    sayi: Number(s.sayi),
+    durum: s.durum,
+  });
 }
 writeFileSync(process.argv[3], JSON.stringify(ornekler, null, 1));
 const say = {}; ornekler.forEach((o) => (say[o.durum] = (say[o.durum] ?? 0) + 1));
