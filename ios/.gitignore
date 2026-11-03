@@ -1,0 +1,8 @@
+# Kişisel Xcode ayarları
+xcuserdata/
+.DS_Store
+build/
+DerivedData/
+
+# Gizliler git'e girmez: ~/developer/keys/omunot/firebase/ altında duruyor
+GoogleService-Info.plist

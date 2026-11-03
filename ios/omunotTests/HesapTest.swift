@@ -2,8 +2,8 @@
 //  HesapTest.swift
 //  omunotTests
 //
-//  web_hesap_ornekleri.json omunot.com js/hesap.js çalıştırılarak üretildi
-//  (omunot-android/app/src/test/resources/uret.mjs; Android ile aynı dosya).
+//  ortak/web_hesap_ornekleri.json, web/js/hesap.js çalıştırılarak üretildi
+//  (ortak/uret.mjs; Android ile aynı dosya).
 //
 
 import XCTest
@@ -15,7 +15,7 @@ final class HesapTest: XCTestCase {
 
     /// Varsayılan ayarlarla iOS hesabı web ile her örnekte aynı olmalı.
     func testWebIleAyniSonuc() throws {
-        let yol = URL(fileURLWithPath: #filePath).deletingLastPathComponent().appendingPathComponent("web_hesap_ornekleri.json")
+        let yol = URL(fileURLWithPath: #filePath).deletingLastPathComponent().appendingPathComponent("../../ortak/web_hesap_ornekleri.json")
         let ornekler = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: yol)) as? [[String: Any]])
         XCTAssertGreaterThanOrEqual(ornekler.count, 600)
         for (i, o) in ornekler.enumerated() {

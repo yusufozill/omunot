@@ -10,7 +10,7 @@ class HesapTest {
     private val bir = SINIFLAR[0]
 
     /**
-     * web_hesap_ornekleri.json omunot.com js/hesap.js çalıştırılarak üretildi (uret.mjs).
+     * ortak/web_hesap_ornekleri.json, web/js/hesap.js çalıştırılarak üretildi (ortak/uret.mjs).
      * Varsayılan ayarlarla Android hesabı web ile her örnekte aynı olmalı.
      */
     @Test

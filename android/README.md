@@ -1,6 +1,6 @@
-# omunot-android
+# OmuNot Android
 
-OmuNot'un native Android sürümü (Kotlin + Jetpack Compose). iOS uygulamasının (omunot-ios) ekranları,
+OmuNot'un native Android sürümü (Kotlin + Jetpack Compose). iOS uygulamasının ([ios/](../ios/)) ekranları,
 omunot.com'un hesap mantığı (`js/hesap.js`, `js/data.js`).
 
 - Paket: `com.omunot.omunotsays` (Firebase `omunot` projesinde kayıtlı), versionCode 11
@@ -15,12 +15,7 @@ cp ~/developer/keys/omunot/firebase/google-services.json app/
 ```
 
 ## Hesap testi
-`app/src/test/resources/web_hesap_ornekleri.json`, web'in `hesap.js`'i çalıştırılarak üretildi.
-Web hesabı değişirse yeniden üret:
-
-```bash
-node app/src/test/resources/uret.mjs ../omunot/js/hesap.js app/src/test/resources/web_hesap_ornekleri.json
-```
+Golden örnekler web ile ortak: `../ortak/web_hesap_ornekleri.json` (bkz. [ortak/](../ortak/)).
 
 ```bash
 ./gradlew testDebugUnitTest

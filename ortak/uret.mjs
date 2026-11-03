@@ -1,9 +1,12 @@
-// Web hesap.js'ten golden örnekler üretir. Kullanım: node uret.mjs <hesap.js yolu> <çıktı>
+// Web hesap.js'ten golden örnekler üretir: node ortak/uret.mjs  (varsayılan: web/js/hesap.js → ortak/web_hesap_ornekleri.json)
+// Android ve iOS hesap testleri bu dosyayı okur.
 // Her örnekte `notlar`, kutuların ekrandaki sırasıdır: sabit olmayan bloklar, sonra MDU, PDÖ,
 // Gelişim, Final. Uygulamalar kendi alan id'lerini bu sıraya göre eşler (Android, iOS).
 import { writeFileSync } from 'node:fs';
-import { pathToFileURL } from 'node:url';
-const hesapYolu = process.argv[2];
+import { fileURLToPath, pathToFileURL } from 'node:url';
+const burasi = (yol) => fileURLToPath(new URL(yol, import.meta.url));
+const hesapYolu = process.argv[2] ?? burasi('../web/js/hesap.js');
+const ciktiYolu = process.argv[3] ?? burasi('web_hesap_ornekleri.json');
 const { hesapla } = await import(pathToFileURL(hesapYolu).href);
 const { SINIFLAR } = await import(pathToFileURL(hesapYolu.replace('hesap.js', 'data.js')).href);
 
@@ -48,6 +51,6 @@ for (let i = 0; i < 600; i++) {
     durum: s.durum,
   });
 }
-writeFileSync(process.argv[3], JSON.stringify(ornekler, null, 1));
+writeFileSync(ciktiYolu, JSON.stringify(ornekler, null, 1));
 const say = {}; ornekler.forEach((o) => (say[o.durum] = (say[o.durum] ?? 0) + 1));
 console.log(ornekler.length, say);

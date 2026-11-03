@@ -13,6 +13,8 @@ val imza = Properties().apply {
 }
 
 android {
+    // Hesap testinin golden örnekleri web ile ortak: ortak/web_hesap_ornekleri.json
+    sourceSets.getByName("test").resources.srcDir("../../ortak")
     namespace = "com.omunot.omunotsays"
     compileSdk = 36
 
