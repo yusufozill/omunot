@@ -19,3 +19,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+Bu lisans yazı tiplerini kapsamaz. android/app/src/main/res/font/ ve ios/omunot/fonts/
+altındaki Indie Flower ve Montserrat Alternates, SIL Open Font License 1.1 ile dağıtılır:
+licenses/OFL-IndieFlower.txt, licenses/OFL-MontserratAlternates.txt.

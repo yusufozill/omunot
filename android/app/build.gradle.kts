@@ -4,8 +4,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.google.services)
+    alias(libs.plugins.google.services) apply false
 }
+
+// Firebase ayarı (app/google-services.json) git'e girmez. Dosya yoksa eklenti uygulanmaz: derleme
+// ve testler çalışır, ama uygulama Firebase'e (sayaç) bağlanamaz.
+if (file("google-services.json").exists()) apply(plugin = "com.google.gms.google-services")
 
 // İmza bilgisi git'e girmez: keystore.properties ~/developer/keys/omunot/ altından kopyalanır.
 val imza = Properties().apply {

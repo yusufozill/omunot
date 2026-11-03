@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "*.log"]
+    "ignore": ["firebase.json", "README.md", "**/.*", "**/node_modules/**", "*.log"]
   },
   "emulators": {
     "hosting": { "port": 5050 },

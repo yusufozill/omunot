@@ -1,12 +1,16 @@
 # OmuNot Android
 
 OmuNot'un native Android sürümü (Kotlin + Jetpack Compose). iOS uygulamasının ([ios/](../ios/)) ekranları,
-omunot.com'un hesap mantığı (`js/hesap.js`, `js/data.js`).
+omunot.com'un hesap mantığı (`web/js/hesap.js`, `web/js/data.js`).
 
 - Paket: `com.omunot.omunotsays` (Firebase `omunot` projesinde kayıtlı), versionCode 11
 - Sayaç: Realtime Database `sayac/sayac`, web ve iOS ile ortak
 
 ## Kurulum
+Kendi Firebase projenle çalıştırmak için oradan indirdiğin `google-services.json`'u `app/`
+altına koy. Dosya yoksa derleme ve testler yine çalışır, yalnız sayaç bağlanmaz.
+
+Proje sahibi için:
 Gizliler git'e girmez, `~/developer/keys/omunot/` altında:
 
 ```bash

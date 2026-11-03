@@ -1,1 +1,15 @@
 .DS_Store
+node_modules/
+.env
+.env.*
+
+# Gizliler ve platform ayarları hiçbir klasörde git'e girmez
+google-services.json
+GoogleService-Info.plist
+keystore.properties
+key.properties
+*.jks
+*.keystore
+*.p12
+*.mobileprovision
+*service-account*.json
